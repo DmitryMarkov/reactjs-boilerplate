@@ -8,8 +8,8 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src/**",
-    "lint:fix": "eslint --fix src",
+    "lint": "eslint --ext .jsx,.js src",
+    "lint:fix": "eslint --fix --ext .jsx,.js src",
     "analyze": "webpack --profile --config webpack.config.analyze.js",
     "clean": "rimraf dist",
     "build": "npm run clean & webpack --color --progress",
@@ -26,6 +26,7 @@
     "css-loader": "^0.28.7",
     "eslint": "^4.13.1",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-html": "^4.0.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",

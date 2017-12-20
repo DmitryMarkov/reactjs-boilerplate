@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import chai from 'chai';
 import { mount, shallow } from 'enzyme';

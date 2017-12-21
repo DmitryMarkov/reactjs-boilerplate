@@ -22,6 +22,9 @@
   "plugins": [
     "html"
   ],
+  "globals": {
+    "VERSION": true
+  },
   "env": {
     "browser": true,
     "node": true,

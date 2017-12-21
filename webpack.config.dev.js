@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const appVersion = require('./package.json').version;
 
 module.exports = {
   entry: [
@@ -19,6 +20,9 @@ module.exports = {
       template: './src/index.html',
       filename: './index.html',
       inject: 'body'
+    }),
+    new webpack.DefinePlugin({
+      APP_VERSION: JSON.stringify(appVersion)
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()

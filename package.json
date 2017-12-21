@@ -10,7 +10,7 @@
     "test": "mocha --require babel-core/register --require ignore-styles src/**/*.test.jsx",
     "lint": "eslint --ext .jsx,.js src && npm run lint:post",
     "lint:fix": "eslint --fix --ext .jsx,.js src && npm run lint:post",
-    "lint:post": "echo 'No ESLint errors!!!'",
+    "lint:post": "echo No ESLint errors!!!",
     "analyze": "webpack --profile --config webpack.config.analyze.js",
     "clean": "rimraf dist",
     "build": "npm run clean & webpack --color --progress",

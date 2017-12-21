@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const appVersion = require('./package.json').version;
 
 module.exports = {
   entry: {
@@ -30,7 +31,8 @@ module.exports = {
       minChunks: Infinity
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      APP_VERSION: JSON.stringify(appVersion)
     }),
     new ExtractTextPlugin('assets/css/[name].[hash].styles.min.css'),
     new UglifyJsPlugin({

@@ -13,7 +13,7 @@
     "lint:post": "echo No ESLint errors!!!",
     "analyze": "webpack --profile --config webpack.config.analyze.js",
     "clean": "rimraf dist",
-    "build": "npm run clean & webpack --color --progress",
+    "build": "webpack --color --progress",
     "server": "node server.js",
     "serve": "webpack-dev-server --open --color --progress --config webpack.config.dev.js",
     "start": "npm run lint && npm run serve"
@@ -28,6 +28,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
+    "clean-webpack-plugin": "^0.1.17",
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "enzyme": "^3.2.0",

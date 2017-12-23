@@ -19,6 +19,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
+      favicon: './src/favicon.ico',
       inject: 'body'
     }),
     new webpack.DefinePlugin({
@@ -86,13 +87,21 @@ module.exports = {
          * url-loader images converted to base64
          * file-loader images stored in images directory
          */
-        test: /\.(png|svg|jpg|gif|ico)$/,
+        test: /\.(png|svg|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               outputPath: 'assets/images/'
             }
+          }
+        ]
+      },
+      {
+        test: /\.ico$/,
+        use: [
+          {
+            loader: 'url-loader'
           }
         ]
       },

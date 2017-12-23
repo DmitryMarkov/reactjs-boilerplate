@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const appVersion = require('./package.json').version;
@@ -20,9 +21,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
+      favicon: './src/favicon.ico',
       inject: 'body'
     }),
     new webpack.optimize.CommonsChunkPlugin({
@@ -94,13 +97,21 @@ module.exports = {
          * url-loader images converted to base64
          * file-loader images stored in images directory
          */
-        test: /\.(png|svg|jpg|gif|ico)$/,
+        test: /\.(png|svg|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               outputPath: 'assets/images/'
             }
+          }
+        ]
+      },
+      {
+        test: /\.ico$/,
+        use: [
+          {
+            loader: 'url-loader'
           }
         ]
       },

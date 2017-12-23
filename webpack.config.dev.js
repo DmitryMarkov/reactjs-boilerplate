@@ -86,7 +86,7 @@ module.exports = {
          * url-loader images converted to base64
          * file-loader images stored in images directory
          */
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|ico)$/,
         use: [
           {
             loader: 'file-loader',

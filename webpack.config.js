@@ -4,6 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+
+const appName = require('./package.json').name;
 const appVersion = require('./package.json').version;
 
 module.exports = {
@@ -22,10 +25,32 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
+    new FaviconsWebpackPlugin({
+      logo: './src/assets/images/favicon.png',
+      prefix: 'assets/images/icons-[hash]/',
+      emitStats: false,
+      statsFilename: 'iconstats-[hash].json',
+      persistentCache: true,
+      inject: true,
+      background: '#fff',
+      title: appName,
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: false,
+        twitter: false,
+        yandex: false,
+        windows: false
+      }
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
-      favicon: './src/favicon.ico',
+      // favicon: './src/favicon.ico', // Bundle original .ico file
       inject: 'body'
     }),
     new webpack.optimize.CommonsChunkPlugin({
@@ -35,6 +60,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
+      APP_NAME: JSON.stringify(appName),
       APP_VERSION: JSON.stringify(appVersion)
     }),
     new ExtractTextPlugin('assets/css/[name].[hash].styles.min.css'),

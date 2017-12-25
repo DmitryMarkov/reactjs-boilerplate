@@ -4,12 +4,12 @@ import { AppContainer } from 'react-hot-loader';
 import Routes from './components/Routes';
 // import './favicon.ico';
 
-render(
-  <AppContainer>
-    <Routes />
-  </AppContainer>,
-  document.getElementById('root')
-);
+const HotMiddleware = () => (
+  HOT_MIDDLEWARE
+    ? <Routes />
+    : <AppContainer><Routes /></AppContainer>);
+
+render(HotMiddleware(), document.getElementById('root'));
 
 if (module.hot) {
   module.hot.accept();

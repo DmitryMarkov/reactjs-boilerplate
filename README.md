@@ -14,19 +14,19 @@
 ##### 1. Start dev server with Hot Reload
 ```npm start``` or ```yarn start```
 
-##### 2. Start middleware server
-```npm run server``` or ```yarn run server```
+##### 2. Start hot middleware server
+```npm run server``` or ```yarn start:midd```
 
 ##### 3. Build project (emit files to dist directory)
-```npm run build``` or ```yarn run build```
+```npm run start:midd``` or ```yarn build```
 
 ##### 4. Analyze project (size of dependencies)
-```npm run analyze``` or ```yarn run analyze```
+```npm run analyze``` or ```yarn analyze```
 
 ##### 5. ESLint source code
-```npm run lint``` or ```yarn run lint```
+```npm run lint``` or ```yarn lint```
 > To fix simple ESLint errors
-```npm run lint:fix``` or ```yarn run lint:fix```
+```npm run lint:fix``` or ```yarn lint:fix```
 
 ##### 5. Mocha test (only .jsx files)
 ```npm test``` or ```yarn test```

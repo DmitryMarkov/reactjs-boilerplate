@@ -1,16 +1,24 @@
+/* eslint-disable */
 const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
-
-const app = express();
-const config = require('./webpack.config.dev.js');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+const config = require('./webpack.config.middle.js');
 
 const compiler = webpack(config);
 
+const PORT = 3000;
+
+const app = express();
+
 app.use(webpackDevMiddleware(compiler, {
-  publicPath: config.output.publicPath
+  noInfo: true,
+  publicPath: config.output.publicPath,
+  stats: {
+    colors: true
+  }
 }));
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!\n');
-});
+app.use(webpackHotMiddleware(compiler));
+
+app.listen(PORT, () => console.log('Webpack Hot Middleware listening on port ' + PORT + '!\n'));

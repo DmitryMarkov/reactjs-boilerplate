@@ -61,7 +61,8 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
       APP_NAME: JSON.stringify(appName),
-      APP_VERSION: JSON.stringify(appVersion)
+      APP_VERSION: JSON.stringify(appVersion),
+      HOT_MIDDLEWARE: false
     }),
     new ExtractTextPlugin('assets/css/[name].[hash].styles.min.css'),
     new UglifyJsPlugin({

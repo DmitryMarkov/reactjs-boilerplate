@@ -1,2 +1,9 @@
 .app {
+  .app-info {
+    position: absolute;
+    display: block;
+    right: 10px;
+    font-size: 14px;
+    user-select: none;
+  }
 }

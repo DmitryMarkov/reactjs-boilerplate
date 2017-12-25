@@ -1,6 +1,6 @@
 {
   "name": "reactjs-sandbox",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "ReactJS Sandbox",
   "main": "./src/index.jsx",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",
@@ -10,13 +10,14 @@
     "test": "mocha --require babel-core/register --require ignore-styles src/**/*.test.jsx",
     "lint": "eslint --ext .jsx,.js src && npm run lint:post",
     "lint:fix": "eslint --fix --ext .jsx,.js src && npm run lint:post",
-    "lint:post": "echo No ESLint errors!!!",
+    "lint:post": "echo \"No ESLint errors!!!\"",
     "analyze": "webpack --profile --config webpack.config.analyze.js",
     "clean": "rimraf dist",
     "build": "webpack --color --progress",
-    "server": "node server.js",
     "serve": "webpack-dev-server --open --color --progress --config webpack.config.dev.js",
-    "start": "npm run lint && npm run serve"
+    "serve:middleware": "node server.js",
+    "start": "npm run lint && npm run serve",
+    "start:midd": "npm run lint && npm run serve:middleware"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -61,7 +62,8 @@
     "webpack": "^3.10.0",
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-middleware": "^2.0.1",
-    "webpack-dev-server": "^2.9.7"
+    "webpack-dev-server": "^2.9.7",
+    "webpack-hot-middleware": "^2.21.0"
   },
   "dependencies": {
     "autoprefixer": "^7.2.3",

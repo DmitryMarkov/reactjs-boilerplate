@@ -1,4 +1,3 @@
-const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
@@ -9,15 +8,10 @@ const appVersion = require('./package.json').version;
 module.exports = {
   entry: [
     'babel-polyfill',
-    'react-hot-loader/patch',
+    'webpack-hot-middleware/client',
     './src/index.jsx'
   ],
   devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
-    compress: true,
-    hot: true
-  },
   plugins: [
     new FaviconsWebpackPlugin({
       logo: './src/assets/images/favicon.png',
@@ -50,10 +44,11 @@ module.exports = {
     new webpack.DefinePlugin({
       APP_NAME: JSON.stringify(appName),
       APP_VERSION: JSON.stringify(appVersion),
-      HOT_MIDDLEWARE: false
+      HOT_MIDDLEWARE: true
     }),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   resolve: {
     extensions: ['.js', '.jsx']
@@ -62,9 +57,9 @@ module.exports = {
    * Use output for webpack middleware server only
    */
   output: {
-    filename: 'assets/js/[name].[hash].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    path: __dirname,
+    publicPath: '/',
+    filename: '[name].[hash].bundle.js'
   },
   module: {
     rules: [

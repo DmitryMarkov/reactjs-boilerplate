@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import Routes from './components/Routes';
+import './assets/css/main.scss';
 // import './favicon.ico';
 
 const HotMiddleware = () => (

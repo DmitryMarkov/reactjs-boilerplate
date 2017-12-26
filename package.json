@@ -1,6 +1,6 @@
 {
   "name": "reactjs-sandbox",
-  "version": "0.2.32",
+  "version": "0.2.4",
   "description": "ReactJS Sandbox",
   "main": "./src/index.jsx",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",
@@ -13,7 +13,7 @@
     "lint:post": "echo \"No ESLint errors!!!\"",
     "analyze": "webpack --profile --config webpack.config.analyze.js",
     "clean": "rimraf dist",
-    "build": "webpack --color --progress",
+    "build": "npm run lint && webpack --color --progress",
     "serve": "webpack-dev-server --open --color --progress --config webpack.config.dev.js",
     "serve:middleware": "node server.js",
     "start": "npm run lint && npm run serve",

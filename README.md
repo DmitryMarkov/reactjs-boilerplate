@@ -31,12 +31,20 @@
 ##### 5. Mocha test (only .jsx files)
 ```npm test``` or ```yarn test```
 
-### Deploy on Nginx (react router v4 BrowserRouter settings)
-Add the followign code to **_/etc/nginx/yourconfig.conf_**
+### Deploy on Nginx (React Router v4 BrowserRouter settings)
+Add the following code to **_/etc/nginx/yourconfig.conf_**
 ```bash
 location / {
   if (!-e $request_filename){
     rewrite ^(.*)$ /index.html break;
   }
 }
+```
+### Deploy on Apache (React Router v4 BrowserRouter settings)
+Add the following code to **_.htaccess_**
+```
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]
 ```

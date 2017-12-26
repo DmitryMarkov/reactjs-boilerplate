@@ -15,7 +15,6 @@ module.exports = {
   plugins: [
     new FaviconsWebpackPlugin({
       logo: './src/assets/images/favicon.png',
-      prefix: 'assets/images/icons-[hash]/',
       emitStats: false,
       statsFilename: 'iconstats-[hash].json',
       persistentCache: true,
@@ -105,17 +104,10 @@ module.exports = {
         ]
       },
       {
-        /*
-         * url-loader images converted to base64
-         * file-loader images stored in images directory
-         */
         test: /\.(png|svg|jpg|gif)$/,
         use: [
           {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'assets/images/'
-            }
+            loader: 'file-loader'
           }
         ]
       },
@@ -131,10 +123,7 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'assets/fonts/'
-            }
+            loader: 'file-loader'
           }
         ]
       }

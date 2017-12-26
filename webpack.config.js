@@ -6,6 +6,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
+const DIST_DIR = path.resolve(__dirname, 'dist');
+
 const appName = require('./package.json').name;
 const appVersion = require('./package.json').version;
 
@@ -55,7 +57,11 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: 'assets/js/[name].[hash].bundle.min.js',
+      /*
+       * Export .js files into different location
+       * filename: 'js/[name].[hash].min.js'
+       */
+      filename: '[name].[hash].min.js',
       minChunks: Infinity
     }),
     new webpack.DefinePlugin({
@@ -64,7 +70,7 @@ module.exports = {
       APP_VERSION: JSON.stringify(appVersion),
       HOT_MIDDLEWARE: false
     }),
-    new ExtractTextPlugin('assets/css/[name].[hash].styles.min.css'),
+    new ExtractTextPlugin('assets/css/[name].[hash].min.css'),
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: true,
@@ -76,8 +82,12 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   output: {
-    filename: 'assets/js/[name].[hash].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    /*
+     * Export .js files into different location
+     * filename: 'js/[name].[hash].min.js'
+     */
+    filename: '[name].[hash].min.js',
+    path: DIST_DIR
   },
   module: {
     rules: [
@@ -146,9 +156,14 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           {
+            /*
+             * To bundle fonts into .js file use url-loader
+             */
             loader: 'file-loader',
             options: {
-              outputPath: 'assets/fonts/'
+              // name: '[name].[ext]',
+              publicPath: DIST_DIR,
+              outputPath: '/assets/fonts/'
             }
           }
         ]

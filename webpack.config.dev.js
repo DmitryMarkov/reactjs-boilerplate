@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
+const DIST_DIR = path.resolve(__dirname, 'dist');
+
 const appName = require('./package.json').name;
 const appVersion = require('./package.json').version;
 
@@ -62,8 +64,8 @@ module.exports = {
    * Use output for webpack middleware server only
    */
   output: {
-    filename: 'assets/js/[name].[hash].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[hash].min.js',
+    path: DIST_DIR,
     publicPath: '/'
   },
   module: {

@@ -157,13 +157,14 @@ module.exports = {
         use: [
           {
             /*
-             * To bundle fonts into .js file use url-loader
+             * More browser support use file-loader
+             * Bundle fonts inline into .js file use url-loader
              */
             loader: 'file-loader',
             options: {
               // name: '[name].[ext]',
-              publicPath: DIST_DIR,
-              outputPath: '/assets/fonts/'
+              outputPath: './assets/fonts/',
+              publicPath: '../../'
             }
           }
         ]

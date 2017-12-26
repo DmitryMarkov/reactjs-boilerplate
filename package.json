@@ -1,6 +1,6 @@
 {
   "name": "reactjs-sandbox",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "ReactJS Sandbox",
   "main": "./src/index.jsx",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",

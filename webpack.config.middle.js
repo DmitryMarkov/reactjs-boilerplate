@@ -56,9 +56,9 @@ module.exports = {
    * Use output for webpack middleware server only
    */
   output: {
+    filename: '[name].[hash].min.js',
     path: __dirname,
-    publicPath: '/',
-    filename: '[name].[hash].bundle.js'
+    publicPath: '/'
   },
   module: {
     rules: [

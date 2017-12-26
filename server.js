@@ -11,6 +11,14 @@ const PORT = 3000;
 
 const app = express();
 
+/*
+ * React Router v4 browserRouter historyApiFallback
+ */
+app.use((req, res, next) => {
+  if (!/(\.(?!html)\w+$|__webpack.*)/.test(req.url)) req.url = '/';
+  next();
+});
+
 app.use(webpackDevMiddleware(compiler, {
   noInfo: true,
   publicPath: config.output.publicPath,

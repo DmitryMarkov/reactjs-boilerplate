@@ -61,7 +61,7 @@ module.exports = {
        * Export .js files into different location
        * filename: 'js/[name].[hash].min.js'
        */
-      filename: '[name].[hash].min.js',
+      filename: 'js/[name].[hash].min.js',
       minChunks: Infinity
     }),
     new webpack.DefinePlugin({
@@ -86,7 +86,7 @@ module.exports = {
      * Export .js files into different location
      * filename: 'js/[name].[hash].min.js'
      */
-    filename: '[name].[hash].min.js',
+    filename: 'js/[name].[hash].min.js',
     path: DIST_DIR
   },
   module: {

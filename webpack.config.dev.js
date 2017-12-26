@@ -64,7 +64,7 @@ module.exports = {
    * Use output for webpack middleware server only
    */
   output: {
-    filename: '[name].[hash].min.js',
+    filename: 'js/[name].[hash].min.js',
     path: DIST_DIR,
     publicPath: '/'
   },

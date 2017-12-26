@@ -1,7 +1,6 @@
 # Node files
 node_modules
 yarn-error.log
-yarn.lock
 
 # macOS files
 .DS_Store

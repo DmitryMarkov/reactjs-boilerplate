@@ -12,7 +12,7 @@ const PORT = 3000;
 const app = express();
 
 /*
- * Reacr Router v4 browserRouter historyApiFallback
+ * React Router v4 browserRouter historyApiFallback
  */
 app.use((req, res, next) => {
   if (!/(\.(?!html)\w+$|__webpack.*)/.test(req.url)) req.url = '/';

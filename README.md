@@ -17,8 +17,8 @@
 ##### 2. Start hot middleware server
 ```npm run start:dev``` or ```yarn start:dev```
 
-##### 3. Build project (emit files to dist directory)
-```npm run start:midd``` or ```yarn build```
+##### 3. Build project (bundle files to dist directory)
+```npm run build``` or ```yarn build```
 
 ##### 4. Analyze project (size of dependencies)
 ```npm run analyze``` or ```yarn analyze```
@@ -31,10 +31,13 @@
 ##### 5. Mocha test (only .jsx files)
 ```npm test``` or ```yarn test```
 
-### Delpoy
+### Delpoy (production)
 
-##### 1. Start production server (express)
+##### 1a. Start production server (express)
 ```npm run server``` or ```yarn server```
+
+##### 1b. Start production server with DEBUG mode (express, morgan)
+```npm run server:debug``` or ```yarn server:debug```
 
 ##### 2. Settigs for Nginx (React Router v4 BrowserRouter settings)
 Add the following code to **_/etc/nginx/yourconfig.conf_**

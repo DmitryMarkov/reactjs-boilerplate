@@ -1,16 +1,19 @@
 'use strict';
 
 const express = require('express');
+
+const app = express();
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const morgan = require('morgan');
 const config = require('./webpack.config.middle.js');
 
 const compiler = webpack(config);
 
 const PORT = 3000;
 
-const app = express();
+app.use(morgan('combined'));
 
 /*
  * React Router v4 browserRouter historyApiFallback
@@ -30,4 +33,9 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler));
 
-app.listen(PORT, () => console.log(`Webpack Hot Middleware listening on port ${PORT}\n`));
+app.listen(PORT, () => (
+  console.log(`
+/*************************************/
+/************ DEV SERVER *************/
+/*************************************/\n
+Server is running on http://localhost:${PORT}`)));

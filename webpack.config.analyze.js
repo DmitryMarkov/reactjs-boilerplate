@@ -5,7 +5,7 @@ module.exports = {
   entry: [
     'babel-polyfill',
     'react-hot-loader/patch',
-    './src/index.jsx'
+    './src/app.jsx'
   ],
   plugins: [
     new BundleAnalyzerPlugin()

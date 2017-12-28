@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './App.scss';
+import './Home.scss';
 
-const App = () => (
-  <div className="app">
-    <div className="app-info">
+const Home = () => (
+  <div className="home">
+    <div className="home-info">
       {`${APP_NAME} v${APP_VERSION} hot-middleware=${HOT_MIDDLEWARE}`}
     </div>
     <Link to="/hello-world">Go to HelloWorld</Link>
   </div>
 );
 
-export default App;
+export default Home;

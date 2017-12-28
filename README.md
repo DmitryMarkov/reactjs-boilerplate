@@ -15,7 +15,7 @@
 ```npm start``` or ```yarn start```
 
 ##### 2. Start hot middleware server
-```npm run server``` or ```yarn start:midd```
+```npm run start:dev``` or ```yarn start:dev```
 
 ##### 3. Build project (emit files to dist directory)
 ```npm run start:midd``` or ```yarn build```
@@ -31,7 +31,12 @@
 ##### 5. Mocha test (only .jsx files)
 ```npm test``` or ```yarn test```
 
-### Deploy on Nginx (React Router v4 BrowserRouter settings)
+### Delpoy
+
+##### 1. Start production server (express)
+```npm run server``` or ```yarn server```
+
+##### 2. Settigs for Nginx (React Router v4 BrowserRouter settings)
 Add the following code to **_/etc/nginx/yourconfig.conf_**
 ```bash
 location / {
@@ -40,7 +45,7 @@ location / {
   }
 }
 ```
-### Deploy on Apache (React Router v4 BrowserRouter settings)
+##### 3. Settings for Apache (React Router v4 BrowserRouter settings)
 Add the following code to **_.htaccess_**
 ```
 Options -MultiViews

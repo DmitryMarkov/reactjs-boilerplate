@@ -8,15 +8,14 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const DIST_DIR = path.resolve(__dirname, 'dist');
 
-const appName = require('./package.json').name;
-const appVersion = require('./package.json').version;
+const appInfo = require('./package.json');
 
 module.exports = {
   entry: {
     main: [
       'babel-polyfill',
       'react-hot-loader/patch',
-      './src/index.jsx'
+      './src/app.jsx'
     ],
     vendor: [
       'lodash',
@@ -35,7 +34,7 @@ module.exports = {
       persistentCache: true,
       inject: true,
       background: '#fff',
-      title: appName,
+      title: appInfo.name,
       icons: {
         android: true,
         appleIcon: true,
@@ -66,8 +65,8 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
-      APP_NAME: JSON.stringify(appName),
-      APP_VERSION: JSON.stringify(appVersion),
+      APP_NAME: JSON.stringify(appInfo.name),
+      APP_VERSION: JSON.stringify(appInfo.version),
       HOT_MIDDLEWARE: false
     }),
     new ExtractTextPlugin('assets/css/[name].[hash].min.css'),

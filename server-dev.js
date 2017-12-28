@@ -1,4 +1,5 @@
-/* eslint-disable */
+'use strict';
+
 const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -29,4 +30,4 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler));
 
-app.listen(PORT, () => console.log('Webpack Hot Middleware listening on port ' + PORT + '!\n'));
+app.listen(PORT, () => console.log(`Webpack Hot Middleware listening on port ${PORT}\n`));

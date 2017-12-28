@@ -2,14 +2,13 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
-const appName = require('./package.json').name;
-const appVersion = require('./package.json').version;
+const appInfo = require('./package.json');
 
 module.exports = {
   entry: [
     'babel-polyfill',
     'webpack-hot-middleware/client',
-    './src/index.jsx'
+    './src/app.jsx'
   ],
   devtool: 'inline-source-map',
   plugins: [
@@ -20,7 +19,7 @@ module.exports = {
       persistentCache: true,
       inject: true,
       background: '#fff',
-      title: appName,
+      title: appInfo.name,
       icons: {
         android: true,
         appleIcon: true,
@@ -41,8 +40,8 @@ module.exports = {
       inject: 'body'
     }),
     new webpack.DefinePlugin({
-      APP_NAME: JSON.stringify(appName),
-      APP_VERSION: JSON.stringify(appVersion),
+      APP_NAME: JSON.stringify(appInfo.name),
+      APP_VERSION: JSON.stringify(appInfo.version),
       HOT_MIDDLEWARE: true
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),

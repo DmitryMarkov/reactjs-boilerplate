@@ -1,8 +1,8 @@
 {
   "name": "reactjs-sandbox",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "ReactJS Sandbox",
-  "main": "./src/index.jsx",
+  "main": "./src/app.jsx",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",
   "author": "Piotr Sikora",
   "license": "MIT",
@@ -15,9 +15,10 @@
     "clean": "rimraf dist",
     "build": "npm run lint && webpack --color --progress",
     "serve": "webpack-dev-server --open --color --progress --config webpack.config.dev.js",
-    "serve:middleware": "node server.js",
+    "server:dev": "node server-dev.js",
+    "server": "PORT=3000 node server-prod.js",
     "start": "npm run lint && npm run serve",
-    "start:midd": "npm run lint && npm run serve:middleware"
+    "start:dev": "npm run lint && npm run server:dev"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -39,7 +40,6 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
-    "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "favicons-webpack-plugin": "^0.0.7",
     "file-loader": "^1.1.5",
@@ -68,6 +68,7 @@
   "dependencies": {
     "autoprefixer": "^7.2.3",
     "babel-polyfill": "^6.26.0",
+    "express": "^4.16.2",
     "lodash": "^4.17.4",
     "moment": "^2.20.1",
     "normalize.css": "^7.0.0",

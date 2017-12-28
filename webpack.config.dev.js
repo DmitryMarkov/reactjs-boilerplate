@@ -5,14 +5,13 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const DIST_DIR = path.resolve(__dirname, 'dist');
 
-const appName = require('./package.json').name;
-const appVersion = require('./package.json').version;
+const appInfo = require('./package.json');
 
 module.exports = {
   entry: [
     'babel-polyfill',
     'react-hot-loader/patch',
-    './src/index.jsx'
+    './src/app.jsx'
   ],
   devtool: 'inline-source-map',
   devServer: {
@@ -30,7 +29,7 @@ module.exports = {
       persistentCache: true,
       inject: true,
       background: '#fff',
-      title: appName,
+      title: appInfo.name,
       icons: {
         android: true,
         appleIcon: true,
@@ -51,8 +50,8 @@ module.exports = {
       inject: 'body'
     }),
     new webpack.DefinePlugin({
-      APP_NAME: JSON.stringify(appName),
-      APP_VERSION: JSON.stringify(appVersion),
+      APP_NAME: JSON.stringify(appInfo.name),
+      APP_VERSION: JSON.stringify(appInfo.version),
       HOT_MIDDLEWARE: false
     }),
     new webpack.NamedModulesPlugin(),

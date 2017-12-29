@@ -1,6 +1,6 @@
 {
   "name": "reactjs-sandbox",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "ReactJS Sandbox",
   "main": "./src/app.jsx",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",
@@ -12,11 +12,21 @@
     "lint:fix": "eslint --fix --ext .jsx,.js src && npm run lint:post",
     "lint:post": "echo \"No ESLint errors!!!\"",
     "clean": "rimraf dist",
-    "build": "npm run lint && webpack --color --progress --json > webpack-stats.json",
+    "build": "npm run lint && webpack --color --progress --config webpack.config.prod.js --json > webpack-stats.json",
+
     "server:dev": "node server.js",
     "server": "node index.js",
-    "start:dev": "npm run lint && webpack-dev-server --open --color --progress --config webpack.config.dev.js",
-    "start": "npm run lint && npm run server:dev"
+    "serve": "webpack-dev-server --open --color --progress --config webpack.config.dev.js",
+    "start:dev": "npm run lint && npm run start",
+    "start": "npm run lint && npm run server:dev",
+
+    "build:ssr": "npm run lint && webpack --color --progress --config webpack.config.server.js",
+    "build:ssr:client": "npm run lint && webpack --color --progress --config webpack.config.client.js",
+    "server:ssr": "node dist/main.bundle.js"
+
+
+
+
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

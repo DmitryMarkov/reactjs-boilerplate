@@ -1,12 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+// const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
-const DIST_DIR = path.resolve(__dirname, 'dist');
+const PUBLIC_DIR = path.resolve(__dirname, 'public');
 
 const appInfo = require('./package.json');
 
@@ -14,55 +14,56 @@ module.exports = {
   entry: {
     main: [
       'babel-polyfill',
-      'react-hot-loader/patch',
+      // 'react-hot-loader/patch',
       './src/app.jsx'
-    ],
-    vendor: [
-      'lodash',
-      'react',
-      'react-dom',
-      'normalize.css'
     ]
+
+    // vendor: [
+    //   'lodash',
+    //   'react',
+    //   'react-dom',
+    //   'normalize.css'
+    // ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new FaviconsWebpackPlugin({
-      logo: './src/assets/images/favicon.png',
-      prefix: 'assets/images/icons-[hash]/',
-      emitStats: false,
-      statsFilename: 'iconstats-[hash].json',
-      persistentCache: true,
-      inject: true,
-      background: '#fff',
-      title: appInfo.name,
-      icons: {
-        android: true,
-        appleIcon: true,
-        appleStartup: true,
-        coast: false,
-        favicons: true,
-        firefox: true,
-        opengraph: false,
-        twitter: false,
-        yandex: false,
-        windows: false
-      }
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: './index.html',
-      // favicon: './src/favicon.ico', // Bundle original .ico file
-      inject: 'body'
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      /*
-       * Export .js files into different location
-       * filename: 'js/[name].[hash].min.js'
-       */
-      filename: '[name].[hash].min.js',
-      minChunks: Infinity
-    }),
+    new CleanWebpackPlugin(['public']),
+    // new FaviconsWebpackPlugin({
+    //   logo: './src/assets/images/favicon.png',
+    //   prefix: 'assets/images/icons-[hash]/',
+    //   emitStats: false,
+    //   statsFilename: 'iconstats-[hash].json',
+    //   persistentCache: true,
+    //   inject: true,
+    //   background: '#fff',
+    //   title: appInfo.name,
+    //   icons: {
+    //     android: true,
+    //     appleIcon: true,
+    //     appleStartup: true,
+    //     coast: false,
+    //     favicons: true,
+    //     firefox: true,
+    //     opengraph: false,
+    //     twitter: false,
+    //     yandex: false,
+    //     windows: false
+    //   }
+    // }),
+    // new HtmlWebpackPlugin({
+    //   template: './src/index.html',
+    //   filename: './index.html',
+    //   // favicon: './src/favicon.ico', // Bundle original .ico file
+    //   inject: 'body'
+    // }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+
+    //    * Export .js files into different location
+    //    * filename: 'js/[name].[hash].min.js'
+
+    //   filename: '[name].[hash].min.js',
+    //   minChunks: Infinity
+    // }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
       APP_NAME: JSON.stringify(appInfo.name),
@@ -85,8 +86,8 @@ module.exports = {
      * Export .js files into different location
      * filename: 'js/[name].[hash].min.js'
      */
-    filename: '[name].[hash].min.js',
-    path: DIST_DIR
+    filename: 'bundle.js',
+    path: PUBLIC_DIR
   },
   module: {
     rules: [

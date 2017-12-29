@@ -1,6 +1,6 @@
 {
   "name": "reactjs-sandbox",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "ReactJS Sandbox",
   "main": "./src/app.jsx",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",
@@ -14,12 +14,10 @@
     "analyze": "webpack --profile --config webpack.config.analyze.js",
     "clean": "rimraf dist",
     "build": "npm run lint && webpack --color --progress",
-    "serve": "webpack-dev-server --open --color --progress --config webpack.config.dev.js",
     "server:dev": "node server.js",
     "server": "node index.js",
-    "server:debug": "DEBUG=1 node index.js",
-    "start": "npm run lint && npm run serve",
-    "start:dev": "npm run lint && npm run server:dev"
+    "start:dev": "npm run lint && webpack-dev-server --open --color --progress --config webpack.config.dev.js",
+    "start": "npm run lint && npm run server:dev"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

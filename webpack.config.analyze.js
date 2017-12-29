@@ -14,7 +14,7 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   output: {
-    filename: 'js/[name].bundle.js',
+    filename: '[name].[hash].min.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {

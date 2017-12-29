@@ -10,7 +10,7 @@ const HotMiddleware = () => (
     ? <Routes />
     : <AppContainer><Routes /></AppContainer>);
 
-render(HotMiddleware(), document.getElementById('root'));
+render(HotMiddleware(), document.getElementById('app'));
 
 if (module.hot) {
   module.hot.accept();

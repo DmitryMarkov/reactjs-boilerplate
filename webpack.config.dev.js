@@ -1,9 +1,6 @@
-const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-
-const DIST_DIR = path.resolve(__dirname, 'dist');
 
 const appInfo = require('./package.json');
 
@@ -23,9 +20,7 @@ module.exports = {
   plugins: [
     new FaviconsWebpackPlugin({
       logo: './src/assets/images/favicon.png',
-      prefix: 'assets/images/icons-[hash]/',
       emitStats: false,
-      statsFilename: 'iconstats-[hash].json',
       persistentCache: true,
       inject: true,
       background: '#fff',
@@ -59,14 +54,6 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.js', '.jsx']
-  },
-  /*
-   * Use output for webpack middleware server only
-   */
-  output: {
-    filename: '[name].[hash].min.js',
-    path: DIST_DIR,
-    publicPath: '/'
   },
   module: {
     rules: [
@@ -119,10 +106,7 @@ module.exports = {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
           {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'assets/images/'
-            }
+            loader: 'file-loader'
           }
         ]
       },
@@ -138,10 +122,7 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'assets/fonts/'
-            }
+            loader: 'file-loader'
           }
         ]
       }

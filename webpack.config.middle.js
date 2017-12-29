@@ -15,7 +15,6 @@ module.exports = {
     new FaviconsWebpackPlugin({
       logo: './src/assets/images/favicon.png',
       emitStats: false,
-      statsFilename: 'iconstats-[hash].json',
       persistentCache: true,
       inject: true,
       background: '#fff',
@@ -51,9 +50,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  /*
-   * Use output for webpack middleware server only
-   */
   output: {
     filename: '[name].[hash].min.js',
     path: __dirname,

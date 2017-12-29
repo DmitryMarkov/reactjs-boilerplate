@@ -11,13 +11,10 @@ const config = require('./webpack.config.middle.js');
 
 const compiler = webpack(config);
 
-const PORT = 3000;
+const { DEBUG, PORT = 3000 } = process.env;
 
-app.use(morgan('combined'));
+if (DEBUG === '1') app.use(morgan('combined'));
 
-/*
- * React Router v4 browserRouter historyApiFallback
- */
 app.use((req, res, next) => {
   if (!/(\.(?!html)\w+$|__webpack.*)/.test(req.url)) req.url = '/';
   next();
@@ -37,5 +34,6 @@ app.listen(PORT, () => (
   console.log(`
 /*************************************/
 /************ DEV SERVER *************/
-/*************************************/\n
+/*************************************/
+${DEBUG === '1' ? '\nDEBUG MODE' : ''}
 Server is running on http://localhost:${PORT}`)));

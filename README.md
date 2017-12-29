@@ -11,19 +11,16 @@
 
 ### How to use it
 
-##### 1. Start dev server with Hot Reload
-```npm start``` or ```yarn start```
+##### 1. Start WebpackHotMiddleware Server (dev)
+```npm run start``` or ```yarn start```
 
-##### 2. Start hot middleware server
-```npm run start:dev``` or ```yarn start:dev```
+##### 2. Start WebpackDevServer with Hot Reload (dev)
+```npm run start:dec``` or ```yarn start:dev```
 
 ##### 3. Build project (bundle files to dist directory)
 ```npm run build``` or ```yarn build```
 
-##### 4. Analyze project (size of dependencies)
-```npm run analyze``` or ```yarn analyze```
-
-##### 5. ESLint source code
+##### 4. ESLint source code
 ```npm run lint``` or ```yarn lint```
 > To fix simple ESLint errors
 ```npm run lint:fix``` or ```yarn lint:fix```
@@ -33,11 +30,11 @@
 
 ### Delpoy (production)
 
-##### 1a. Start production server (express)
+##### 1a. Start Express Production Server
 ```npm run server``` or ```yarn server```
 
-##### 1b. Start production server with DEBUG mode (express, morgan)
-```npm run server:debug``` or ```yarn server:debug```
+##### 1b. Start Express Production Server in DEBUG mode (morgan)
+```DEBUG=1 npm run server``` or ```DEBUG=1 yarn server```
 
 ##### 2. Settigs for Nginx (React Router v4 BrowserRouter settings)
 Add the following code to **_/etc/nginx/yourconfig.conf_**

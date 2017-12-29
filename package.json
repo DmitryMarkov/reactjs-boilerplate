@@ -1,6 +1,6 @@
 {
   "name": "reactjs-sandbox",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "ReactJS Sandbox",
   "main": "./src/app.jsx",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",
@@ -11,9 +11,8 @@
     "lint": "eslint --ext .jsx,.js src && npm run lint:post",
     "lint:fix": "eslint --fix --ext .jsx,.js src && npm run lint:post",
     "lint:post": "echo \"No ESLint errors!!!\"",
-    "analyze": "webpack --profile --config webpack.config.analyze.js",
     "clean": "rimraf dist",
-    "build": "npm run lint && webpack --color --progress",
+    "build": "npm run lint && webpack --color --progress --json > webpack-stats.json",
     "server:dev": "node server.js",
     "server": "node index.js",
     "start:dev": "npm run lint && webpack-dev-server --open --color --progress --config webpack.config.dev.js",
@@ -59,7 +58,6 @@
     "uglifyjs-webpack-plugin": "^1.1.4",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
-    "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-middleware": "^2.0.1",
     "webpack-dev-server": "^2.9.7",
     "webpack-hot-middleware": "^2.21.0"

@@ -7,3 +7,6 @@ yarn-error.log
 
 # Dist
 dist
+
+# Webpack logs
+webpack-stats.json

@@ -14,7 +14,6 @@ module.exports = {
   entry: {
     main: [
       'babel-polyfill',
-      'react-hot-loader/patch',
       './src/app.jsx'
     ],
     vendor: [

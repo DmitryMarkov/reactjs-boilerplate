@@ -48,9 +48,9 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './public/index.html',
       filename: './index.html',
-      // favicon: './src/favicon.ico', // Bundle original .ico file
+      favicon: './public/favicon.ico',
       inject: 'body'
     }),
     new webpack.optimize.CommonsChunkPlugin({

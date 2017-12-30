@@ -6,7 +6,9 @@ yarn-error.log
 .DS_Store
 
 # Dist
+build
 dist
+public
 
 # Webpack logs
 webpack-stats.json

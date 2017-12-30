@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './Home.scss';
 
 const Home = () => (
@@ -7,7 +7,6 @@ const Home = () => (
     <div className="home-info">
       {`${APP_NAME} v${APP_VERSION} hot-middleware=${HOT_MIDDLEWARE}`}
     </div>
-    <Link to="/hello-world">Go to HelloWorld</Link>
   </div>
 );
 

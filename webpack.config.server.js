@@ -87,7 +87,7 @@ module.exports = {
      * Export .js files into different location
      * filename: 'js/[name].[hash].min.js'
      */
-    filename: '[name].[hash].min.js',
+    filename: '[name].min.js',
     path: BUILD_DIR
   },
   module: {

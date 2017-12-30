@@ -11,7 +11,7 @@
     "lint": "eslint --ext .jsx,.js src && npm run lint:post",
     "lint:fix": "eslint --fix --ext .jsx,.js src && npm run lint:post",
     "lint:post": "echo \"No ESLint errors!!!\"",
-    "clean": "rimraf dist",
+    "clean": "rimraf build dist public",
     "build": "npm run lint && webpack --color --progress --config webpack.config.prod.js --json > webpack-stats.json",
 
     "server:dev": "node server.js",
@@ -20,9 +20,14 @@
     "start:dev": "npm run lint && npm run start",
     "start": "npm run lint && npm run server:dev",
 
-    "build:ssr": "npm run lint && webpack --color --progress --config webpack.config.server.js",
-    "build:ssr:client": "npm run lint && webpack --color --progress --config webpack.config.client.js",
-    "server:ssr": "node dist/main.bundle.js"
+
+
+
+
+
+    "build:ssr:server": "webpack --color --progress --config webpack.config.server.js",
+    "build:ssr:client": "webpack --color --progress --config webpack.config.client.js",
+    "ssr": "npm run lint && npm run build:ssr:server && npm run build:ssr:client && node build/main.min.js"
 
 
 

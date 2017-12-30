@@ -3,21 +3,26 @@
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import Home from './src/components/Home/Home';
+import HelloWorld from './src/components/HelloWorld/HelloWorld';
 
 const app = express();
 
 app.use(express.static('public'));
 app.get('/', (req, res) => {
-  const content = renderToString(<Home />);
+  const content = renderToString(<HelloWorld />);
 
   const html = `
+    <!DOCTYPE html>
     <html>
-      <head></head>
-      <body>
-        <div>${content}</div>
-        <script src="bundle.js"></script>
-      </body>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>ReactJS Sandbox</title>
+    </head>
+    <body>
+      <div id="app">${content}</div>
+      <script src="bundle.js"></script>
+    </body>
     </html>
   `;
   res.send(content);

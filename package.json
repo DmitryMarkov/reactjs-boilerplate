@@ -47,6 +47,7 @@
     "ignore-styles": "^5.0.1",
     "mocha": "^4.0.1",
     "node-sass": "^4.7.2",
+    "nodemon": "^1.14.6",
     "postcss-loader": "^2.0.9",
     "prop-types": "^15.6.0",
     "react-test-renderer": "^16.2.0",
@@ -66,6 +67,7 @@
   "dependencies": {
     "autoprefixer": "^7.2.3",
     "babel-polyfill": "^6.26.0",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
     "lodash": "^4.17.4",
     "moment": "^2.20.1",

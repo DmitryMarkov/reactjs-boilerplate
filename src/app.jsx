@@ -6,11 +6,11 @@ import './assets/css/main.scss';
 import '../public/favicon.ico';
 
 const HotMiddleware = () => (
-  HOT_MIDDLEWARE
+  NO_MIDDLEWARE !== 'false'
     ? <Routes />
     : <AppContainer><Routes /></AppContainer>);
 
-render(HotMiddleware(), document.querySelector('#app'));
+render(HotMiddleware(), document.getElementById('app'));
 
 if (module.hot) {
   module.hot.accept();

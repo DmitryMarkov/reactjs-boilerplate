@@ -1,8 +1,12 @@
 .hello-world {
   h1 {
     color: tomato;
-    font-family: 'Oswald-Light';
+    font-family: 'Roboto-Thin';
     text-align: center;
     user-select: none;
+  }
+
+  img {
+    margin-right: 10px;
   }
 }

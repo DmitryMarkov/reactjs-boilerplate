@@ -4,10 +4,12 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const appInfo = require('./package.json');
 
-module.exports = {
+module.exports = env => ({
   entry: [
     'babel-polyfill',
-    'react-hot-loader/patch',
+    env.NO_MIDDLEWARE
+      ? 'react-hot-loader/patch'
+      : 'webpack-hot-middleware/client',
     './src/app.jsx'
   ],
   devtool: 'inline-source-map',
@@ -47,13 +49,23 @@ module.exports = {
     new webpack.DefinePlugin({
       APP_NAME: JSON.stringify(appInfo.name),
       APP_VERSION: JSON.stringify(appInfo.version),
-      HOT_MIDDLEWARE: false
+      NO_MIDDLEWARE: env.NO_MIDDLEWARE
     }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   resolve: {
     extensions: ['.js', '.jsx']
+  },
+  /*
+   * Only for WebpackHotMiddleware
+   */
+  output: {
+    filename: '[name].[hash].min.js',
+    path: __dirname,
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -99,10 +111,6 @@ module.exports = {
         ]
       },
       {
-        /*
-         * url-loader images converted to base64
-         * file-loader images stored in images directory
-         */
         test: /\.(png|svg|jpg|gif)$/,
         use: [
           {
@@ -128,4 +136,4 @@ module.exports = {
       }
     ]
   }
-};
+});

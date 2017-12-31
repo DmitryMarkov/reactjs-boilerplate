@@ -1,5 +1,3 @@
-'use strict';
-
 const express = require('express');
 
 const app = express();
@@ -7,7 +5,7 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const morgan = require('morgan');
-const config = require('./webpack.config.middle.js');
+const config = require('./webpack.config.dev.js')({ NO_MIDDLEWARE: false });
 
 const compiler = webpack(config);
 

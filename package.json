@@ -1,6 +1,6 @@
 {
   "name": "reactjs-sandbox",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "ReactJS Sandbox",
   "main": "./src/app.jsx",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",
@@ -15,7 +15,7 @@
     "build": "npm run lint && webpack --color --progress --config webpack.config.prod.js --json > webpack-stats.json",
     "server:dev": "node server.js",
     "server": "node index.js",
-    "serve": "webpack-dev-server --open --color --progress --config webpack.config.dev.js",
+    "serve": "webpack-dev-server --open --color --progress --config webpack.config.dev.js --env.NO_MIDDLEWARE",
     "start:dev": "npm run lint && npm run serve",
     "start": "npm run lint && npm run server:dev"
   },

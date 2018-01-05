@@ -1,5 +1,5 @@
-# ReactJS Sandbox
-### ReactJS Sandbox with webpack 3
+# React Redux Starter
+### React Redux Starter with webpack 3
 ### Installation
 
 ##### 1. Main App (In project directory)

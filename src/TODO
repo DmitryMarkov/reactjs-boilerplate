@@ -1,2 +1,5 @@
-dispatchAction
 shorten ulr to components
+containers ???
+where to fetch data???
+fetch 'npm install whatwg-fetch --save'
+thunk npm install redux-thunk --save

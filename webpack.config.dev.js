@@ -9,7 +9,7 @@ module.exports = env => ({
     'babel-polyfill',
     env.NO_MIDDLEWARE
       ? 'react-hot-loader/patch'
-      : 'webpack-hot-middleware/client',
+      : 'webpack-hot-middleware/client?reload=true',
     './src/app.jsx'
   ],
   devtool: 'inline-source-map',

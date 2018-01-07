@@ -1,26 +1,35 @@
-import { ADD_BOOK } from '../constants/actions';
+import {
+  ADD_BOOK,
+  REMOVE_BOOKS
+} from '../constants/actions';
 
-// This is just an example of initial state
-const initState = {
-  books: [
-    {
-      id: 0,
-      author: 'John Smith',
-      title: 'React Redux for dummies'
-    },
-    {
-      id: 1,
-      author: 'Alex Johnson',
-      title: 'ES6 for dummies'
-    }
-  ]
-};
+const initialState = [
+  {
+    id: 0,
+    author: 'John Smith',
+    title: 'React Redux for dummies'
+  },
+  {
+    id: 1,
+    author: 'Alex Johnson',
+    title: 'ES6 for dummies'
+  }
+];
 
-// state = [] for default (only for demo purpose)
-const book = (state = initState, action) => {
+// state = [] default
+const book = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return { ...state, books: [...state.books, action.insert] };
+      return [
+        ...state,
+        {
+          id: action.id,
+          author: action.author,
+          title: action.title
+        }
+      ];
+    case REMOVE_BOOKS:
+      return initialState;
     default:
       return state;
   }

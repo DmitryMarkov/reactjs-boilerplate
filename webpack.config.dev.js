@@ -12,7 +12,7 @@ module.exports = env => ({
       : 'webpack-hot-middleware/client?reload=true',
     './src/app.jsx'
   ],
-  devtool: 'inline-source-map',
+  devtool: 'cheap-module-source-map',
   devServer: {
     contentBase: './dist',
     compress: true,

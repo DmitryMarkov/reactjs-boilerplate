@@ -6,8 +6,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
-const DIST_DIR = path.resolve(__dirname, 'dist');
-
 const appInfo = require('./package.json');
 
 module.exports = {
@@ -85,7 +83,7 @@ module.exports = {
      * filename: 'js/[name].[hash].min.js'
      */
     filename: '[name].[hash].min.js',
-    path: DIST_DIR
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [

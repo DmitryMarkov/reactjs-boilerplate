@@ -63,7 +63,7 @@ module.exports = env => ({
    * Only for WebpackHotMiddleware
    */
   output: {
-    filename: '[name].[hash].min.js',
+    filename: '[name].js',
     path: __dirname,
     publicPath: '/'
   },
@@ -114,7 +114,10 @@ module.exports = env => ({
         test: /\.(png|svg|jpg|gif)$/,
         use: [
           {
-            loader: 'file-loader'
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
           }
         ]
       },
@@ -130,7 +133,10 @@ module.exports = env => ({
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           {
-            loader: 'file-loader'
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
           }
         ]
       }

@@ -31,7 +31,8 @@ app.use(webpackHotMiddleware(compiler));
 app.listen(PORT, () => (
   console.log(`
 /*************************************/
-/************ DEV SERVER *************/
+/***** HOT MIDDLEWARE DEV SERVER *****/
 /*************************************/
 ${DEBUG === '1' ? '\nDEBUG MODE' : ''}
-Server is running on http://localhost:${PORT}`)));
+Server is running on port ${PORT}
+Open a URL http://localhost:${PORT} in browser`)));

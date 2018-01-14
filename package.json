@@ -1,6 +1,6 @@
 {
   "name": "react-redux-starter",
-  "version": "0.5.12",
+  "version": "0.5.13",
   "description": "React Redux Starter",
   "main": "./src/app.jsx",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",

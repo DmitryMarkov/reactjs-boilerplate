@@ -69,8 +69,7 @@ module.exports = {
     new ExtractTextPlugin('assets/css/[name].[hash].min.css'),
     new UglifyJsPlugin({
       uglifyOptions: {
-        compress: true,
-        comments: false
+        compress: true
       }
     })
   ],

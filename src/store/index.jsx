@@ -1,22 +1,19 @@
 import {
+  applyMiddleware,
   createStore
-  // applyMiddleware
 } from 'redux';
-// import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+/* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": false}] */
+import { composeWithDevTools } from 'redux-devtools-extension';
 import reducers from '../reducers/';
 
-/* eslint-disable no-underscore-dangle */
+const devTools = process.env.NODE_ENV === undefined
+  ? composeWithDevTools(applyMiddleware(thunk))
+  : '';
+
 const store = createStore(
   reducers,
-  process.env.NODE_ENV === undefined
-    ? window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    : ''
+  devTools
 );
-/* eslint-enable */
-
-// const store = createStore(
-//   reducers,
-//   composeWithDevTools(applyMiddleware(logger))
-// );
 
 export default store;

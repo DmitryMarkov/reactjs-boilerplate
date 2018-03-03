@@ -9,10 +9,10 @@ module.exports = env => ({
     'babel-polyfill',
     env.NO_MIDDLEWARE
       ? 'react-hot-loader/patch'
-      : 'webpack-hot-middleware/client',
+      : 'webpack-hot-middleware/client?reload=true',
     './src/app.jsx'
   ],
-  devtool: 'inline-source-map',
+  devtool: 'cheap-module-source-map',
   devServer: {
     contentBase: './dist',
     compress: true,
@@ -63,7 +63,7 @@ module.exports = env => ({
    * Only for WebpackHotMiddleware
    */
   output: {
-    filename: '[name].[hash].min.js',
+    filename: '[name].js',
     path: __dirname,
     publicPath: '/'
   },
@@ -114,7 +114,10 @@ module.exports = env => ({
         test: /\.(png|svg|jpg|gif)$/,
         use: [
           {
-            loader: 'file-loader'
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
           }
         ]
       },
@@ -130,7 +133,10 @@ module.exports = env => ({
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           {
-            loader: 'file-loader'
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
           }
         ]
       }

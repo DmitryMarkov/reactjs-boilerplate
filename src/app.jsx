@@ -6,9 +6,9 @@ import './assets/css/main.scss';
 import '../public/favicon.ico';
 
 const HotMiddleware = () => (
-  NO_MIDDLEWARE !== 'false'
-    ? <Routes />
-    : <AppContainer><Routes /></AppContainer>);
+  NO_MIDDLEWARE
+    ? <AppContainer warnings={false}><Routes /></AppContainer>
+    : <Routes />);
 
 render(HotMiddleware(), document.getElementById('app'));
 

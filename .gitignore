@@ -1,12 +1,16 @@
-# Node files
-node_modules
-yarn-error.log
+# Builds
+dist
+
+# IDE
+.idea
 
 # macOS files
 .DS_Store
 
-# Dist
-dist
+# Node files
+node_modules
+yarn.lock
+yarn-error.log
 
 # Webpack logs
 webpack-stats.json

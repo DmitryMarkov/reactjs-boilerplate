@@ -1,0 +1,23 @@
+# Builds
+dist
+package*
+
+# macOS files
+.DS_Store
+
+# Npm & Yarn files
+yarn-error.log
+
+# Project files
+public
+src
+
+# Webpack files
+index.js
+postcss.config.js
+server.js
+webpack.config*
+webpack-stats.json
+
+# Tarball files
+*.tgz

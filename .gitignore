@@ -1,5 +1,6 @@
 # Builds
 dist
+package
 
 # IDE
 .idea
@@ -14,3 +15,6 @@ yarn-error.log
 
 # Webpack logs
 webpack-stats.json
+
+# Tarball files
+*.tgz

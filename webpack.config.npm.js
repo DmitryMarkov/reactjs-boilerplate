@@ -1,17 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const appInfo = require('./package.json');
 
 module.exports = {
   entry: [
-      // 'babel-polyfill',
-      './src/components/HelloWorld/HelloWorld.jsx'
+    './src/components/HelloWorld/HelloWorld.jsx'
   ],
   plugins: [
     new CleanWebpackPlugin(['lib']),
@@ -21,7 +18,7 @@ module.exports = {
       APP_VERSION: JSON.stringify(appInfo.version),
       NO_MIDDLEWARE: true
     }),
-    new ExtractTextPlugin(appInfo.appName + '.min.css'),
+    new ExtractTextPlugin(`${appInfo.appName}.min.css`),
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: true
@@ -32,7 +29,7 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   output: {
-    filename: appInfo.appName + '.min.js',
+    filename: `${appInfo.appName}.min.js`,
     library: appInfo.appName,
     libraryTarget: 'umd',
     umdNamedDefine: true,

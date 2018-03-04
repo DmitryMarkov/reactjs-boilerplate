@@ -21,7 +21,7 @@ module.exports = {
       APP_VERSION: JSON.stringify(appInfo.version),
       NO_MIDDLEWARE: true
     }),
-    new ExtractTextPlugin(appInfo.name + '.min.css'),
+    new ExtractTextPlugin(appInfo.appName + '.min.css'),
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: true
@@ -32,8 +32,8 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   output: {
-    filename: appInfo.name + '.min.js',
-    library: appInfo.name,
+    filename: appInfo.appName + '.min.js',
+    library: appInfo.appName,
     libraryTarget: 'umd',
     umdNamedDefine: true,
     path: path.resolve(__dirname, 'lib')

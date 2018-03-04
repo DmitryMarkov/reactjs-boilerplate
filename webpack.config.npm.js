@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const appInfo = require('./package.json');
@@ -18,7 +17,6 @@ module.exports = {
       APP_VERSION: JSON.stringify(appInfo.version),
       NO_MIDDLEWARE: true
     }),
-    new ExtractTextPlugin(`${appInfo.appName}.min.css`),
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: true
@@ -88,24 +86,38 @@ module.exports = {
         ]
       },
       {
-        test: /\.(css|scss)$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                minimize: true
-              }
-            },
-            {
-              loader: 'postcss-loader'
-            },
-            {
-              loader: 'sass-loader'
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
             }
-          ]
-        })
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
+            }
+          },
+          {
+            loader: 'postcss-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,

@@ -18,3 +18,7 @@ webpack-stats.json
 
 # Tarball files
 *.tgz
+
+# Test
+.nyc_output
+coverage

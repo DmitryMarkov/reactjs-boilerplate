@@ -2,7 +2,7 @@
 import React from 'react';
 import chai from 'chai';
 import { mount, shallow } from 'enzyme';
-// import Home from './Home';
+import Home from './Home';
 
 let expect = chai.expect;
 

@@ -25,8 +25,11 @@
 > To fix simple ESLint errors
 ```npm run lint:fix``` or ```yarn lint:fix```
 
-##### 5. Mocha test (only .jsx files)
+##### 5. Mocha test
 ```npm test``` or ```yarn test```
+
+##### 6. Test coverage
+```npm run test:cover``` or ```yarn test:cover```
 
 ### Delpoy (production)
 

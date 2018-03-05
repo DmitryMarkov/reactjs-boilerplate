@@ -1,0 +1,19 @@
+{
+  "all": true,
+  "cache": true,
+  "extension": [
+    "js",
+    "jsx"
+  ],
+  "include": [
+    "src/**/*.{js|jsx}"
+  ],
+  "exclude": [
+    "**/*.test.{js|jsx}"
+  ],
+  "reporter": [
+    "html",
+    "lcov",
+    "text"
+  ]
+}

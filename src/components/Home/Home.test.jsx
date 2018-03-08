@@ -6,6 +6,6 @@ import Home from './Home';
 
 let expect = chai.expect;
 
-describe('<Home /> Component', () => {
-  it('Component sample test');
+describe('<Home />', () => {
+  it('renders <Home /> component');
 });

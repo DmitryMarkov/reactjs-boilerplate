@@ -1,12 +1,9 @@
 {
-  "all": true,
+  "all": false,
   "cache": true,
   "extension": [
-    "js",
-    "jsx"
-  ],
-  "include": [
-    "src/**/*.{js|jsx}"
+    ".js",
+    ".jsx"
   ],
   "exclude": [
     "**/*.test.{js|jsx}"

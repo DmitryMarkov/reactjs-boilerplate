@@ -6,7 +6,8 @@
     ".jsx"
   ],
   "exclude": [
-    "**/*.test.{js|jsx}"
+    "**/*.test.{js|jsx}",
+    "setupTests.js"
   ],
   "reporter": [
     "html",

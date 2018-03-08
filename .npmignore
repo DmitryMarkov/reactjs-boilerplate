@@ -35,3 +35,4 @@ webpack-stats.json
 # Test
 .nyc_output
 coverage
+setupTests.js

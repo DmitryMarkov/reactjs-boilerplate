@@ -1,10 +1,9 @@
 /* eslint-disable */
 import React from 'react';
-import chai from 'chai';
+import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
+import sinon from 'sinon';
 import Home from './Home';
-
-let expect = chai.expect;
 
 describe('<Home />', () => {
   it('renders <Home /> component');

@@ -1,26 +1,27 @@
 {
   "name": "reactjs-sandbox",
   "appName": "HelloWorld",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "ReactJS Sandbox",
   "main": "./lib/HelloWorld.min.js",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",
   "author": "Piotr Sikora",
   "license": "MIT",
   "scripts": {
-    "test": "mocha \"src/**/*.test.jsx\" --require babel-core/register --require ignore-styles",
+    "test": "mocha \"src/**/*.test.jsx\" --require babel-core/register --require ignore-styles --require setupTests.js",
     "test:cover": "nyc npm test",
+    "test:watch": "mocha \"src/**/*.test.jsx\" --require babel-core/register --require ignore-styles --require setupTests.js --watch",
     "lint": "eslint --ext .js,.jsx src && npm run lint:post",
     "lint:fix": "eslint --fix --ext .jsx,.js src && npm run lint:post",
     "lint:post": "echo \"No ESLint errors!!!\"",
     "clean": "rimraf dist lib package .nyc_output coverage *.tgz webpack-stats* yarn-error*",
     "build": "npm run lint && webpack --color --progress --config webpack.config.prod.js --json > webpack-stats.json",
-    "build:lib": "npm run clean && npm run lint && webpack --color --progress --config webpack.config.npm.js --json > webpack-stats.json && npm pack",
-    "server:dev": "node server.js",
+    "build:lib": "npm run clean && npm run lint && webpack --color --progress --config webpack.config.lib.js --json > webpack-stats.json && npm pack",
     "server": "node index.js",
+    "server:dev": "node server.js",
     "serve": "webpack-dev-server --open --color --progress --config webpack.config.dev.js --env.NO_MIDDLEWARE",
-    "start:dev": "npm run lint && npm run serve",
-    "start": "npm run lint && npm run server:dev"
+    "start": "npm run lint && npm run server:dev",
+    "start:dev": "npm run lint && npm run serve"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0"

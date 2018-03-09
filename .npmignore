@@ -7,6 +7,8 @@ package*
 .editorconfig
 .eslintignore
 .eslintrc
+.gitignore
+.npmignore
 .nycrc
 .stylelintrc
 

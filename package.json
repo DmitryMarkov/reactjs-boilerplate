@@ -1,14 +1,14 @@
 {
   "name": "reactjs-sandbox",
   "appName": "HelloWorld",
-  "version": "0.5.4",
+  "version": "0.5.41",
   "description": "ReactJS Sandbox",
   "main": "./lib/HelloWorld.min.js",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",
   "author": "Piotr Sikora",
   "license": "MIT",
   "scripts": {
-    "test": "mocha \"src/**/*.test.jsx\" --require babel-core/register --require ignore-styles --require setupTests.js",
+    "test": "mocha \"src/**/*.test.jsx\" -r babel-core/register -r ignore-styles -r setupTests.js",
     "test:cover": "nyc npm test",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint --ext .js,.jsx src && npm run lint:post",

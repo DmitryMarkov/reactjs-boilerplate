@@ -16,6 +16,7 @@ package*
 .DS_Store
 
 # Npm & Yarn files
+npm-debug.log
 package-lock.json
 yarn-error.log
 yarn.lock

@@ -28,7 +28,10 @@
 ##### 5. Mocha test
 ```npm test``` or ```yarn test```
 
-##### 6. Test coverage
+##### 6. Mocha watcher
+```npm run test:watch``` or ```yarn test:watch```
+
+##### 7. Test coverage
 ```npm run test:cover``` or ```yarn test:cover```
 
 ### Delpoy (production)

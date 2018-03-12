@@ -6,5 +6,13 @@ import sinon from 'sinon';
 import Home from './Home';
 
 describe('<Home />', () => {
-  it('renders <Home /> component');
+  beforeEach(() => {
+    global.APP_NAME = 'Application name';
+    global.APP_VERSION = '1.0.0';
+    global.NO_MIDDLEWARE = 'true';
+
+  }),
+  it('renders <Home /> component', () => {
+    const wrapper = shallow(<Home />);
+  });
 });

@@ -7,7 +7,7 @@ module.exports = (env) => {
   const MINIFY = env.MINIFY === 1;
   return {
     entry: [
-      './src/components/HelloWorld/HelloWorld.jsx'
+      `./src/components/${appInfo.appName}/${appInfo.appName}.jsx`
     ],
     plugins: [
       new webpack.DefinePlugin({

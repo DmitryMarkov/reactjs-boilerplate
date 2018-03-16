@@ -64,7 +64,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify('production'),
       APP_NAME: JSON.stringify(appInfo.name),
       APP_VERSION: JSON.stringify(appInfo.version),
-      NO_MIDDLEWARE: true
+      MIDDLEWARE: false
     }),
     new ExtractTextPlugin('assets/css/[name].[hash].min.css'),
     new UglifyJsPlugin({

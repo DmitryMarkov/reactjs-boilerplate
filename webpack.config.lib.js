@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const appInfo = require('./package.json');
 
 module.exports = (env) => {
-  const MINIFY = env.MINIFY === 1 ? true : false;
+  const MINIFY = env.MINIFY === 1;
   return {
     entry: [
       './src/components/HelloWorld/HelloWorld.jsx'

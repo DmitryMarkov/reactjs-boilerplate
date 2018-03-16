@@ -1,7 +1,7 @@
 {
   "name": "reactjs-sandbox",
   "appName": "HelloWorld",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "ReactJS Sandbox",
   "main": "./lib/HelloWorld.min.js",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",
@@ -17,10 +17,10 @@
     "clean": "rimraf dist lib package .nyc_output coverage *.tgz webpack-stats* yarn-error*",
     "build": "npm run lint && webpack --color --progress --config webpack.config.prod.js --json > webpack-stats.json",
     "lib": "webpack --color --progress --config webpack.config.lib.js",
-    "build:lib": "npm run clean && npm run lint && npm run lib -- --env.MINIFY=1 -p && npm run lib -- --env.MINIFY=0",
+    "build:lib": "npm run lint && rimraf lib && npm run lib -- --env.MINIFY=1 -p && npm run lib -- --env.MINIFY=0",
     "server": "node index.js",
     "server:dev": "node server.js",
-    "serve": "webpack-dev-server --open --color --progress --config webpack.config.dev.js --env.NO_MIDDLEWARE",
+    "serve": "webpack-dev-server --open --color --progress --config webpack.config.dev.js --env.MIDDLEWARE=0",
     "start": "npm run lint && npm run server:dev",
     "start:dev": "npm run lint && npm run serve"
   },

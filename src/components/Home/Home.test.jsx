@@ -9,7 +9,7 @@ describe('<Home />', () => {
   beforeEach(() => {
     global.APP_NAME = 'Application name';
     global.APP_VERSION = '1.0.0';
-    global.NO_MIDDLEWARE = 'true';
+    global.MIDDLEWARE = 'true';
 
   }),
   it('renders <Home /> component', () => {

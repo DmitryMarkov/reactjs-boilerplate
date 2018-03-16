@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const morgan = require('morgan');
-const config = require('./webpack.config.dev.js')({ NO_MIDDLEWARE: false });
+const config = require('./webpack.config.dev.js')({ MIDDLEWARE: true });
 
 const compiler = webpack(config);
 

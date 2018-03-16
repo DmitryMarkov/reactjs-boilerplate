@@ -13,8 +13,7 @@ module.exports = (env) => {
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production'),
         APP_NAME: JSON.stringify(appInfo.name),
-        APP_VERSION: JSON.stringify(appInfo.version),
-        NO_MIDDLEWARE: true
+        APP_VERSION: JSON.stringify(appInfo.version)
       })
     ],
     resolve: {

@@ -1,7 +1,7 @@
 {
   "name": "reactjs-sandbox",
   "appName": "HelloWorld",
-  "version": "0.5.72",
+  "version": "0.5.8",
   "description": "ReactJS Sandbox",
   "main": "./lib/HelloWorld.min.js",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",
@@ -11,6 +11,7 @@
     "test": "mocha \"src/**/*.test.js*\" -r babel-core/register -r ignore-styles -r setupTests.js",
     "test:cover": "nyc npm test",
     "test:watch": "npm run test -- --watch",
+    "coveralls": "npm run test:cover && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint --ext .js,.jsx src && npm run lint:post",
     "lint:fix": "eslint --fix --ext .jsx,.js src && npm run lint:post",
     "lint:post": "echo \"No ESLint errors!!!\"",
@@ -24,9 +25,6 @@
     "start": "npm run lint && npm run server:dev",
     "start:dev": "npm run lint && npm run serve"
   },
-  "peerDependencies": {
-    "prop-types": "^15.6.0"
-  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.3",
@@ -38,6 +36,7 @@
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "clean-webpack-plugin": "^0.1.17",
+    "coveralls": "^3.0.0",
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "enzyme": "^3.3.0",

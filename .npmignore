@@ -2,11 +2,16 @@
 dist
 package*
 
+# CI
+.coveralls.yml
+.travis.yml
+
 # Configs
 .babelrc
 .editorconfig
 .eslintignore
 .eslintrc
+.gitattributes
 .gitignore
 .npmignore
 .nycrc

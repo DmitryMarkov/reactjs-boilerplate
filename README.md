@@ -17,16 +17,25 @@
 ##### 2. Start WebpackDevServer with Hot Reload (dev)
 ```npm run start:dec``` or ```yarn start:dev```
 
-##### 3. Build project (bundle files to dist directory)
+##### 3a. Build project (bundle files to dist directory)
 ```npm run build``` or ```yarn build```
+
+##### 3b. Build UMD library (bundle minified and unminified files to lib directory)
+```npm run build:lib``` or ```yarn build:lib```
 
 ##### 4. ESLint source code
 ```npm run lint``` or ```yarn lint```
 > To fix simple ESLint errors
 ```npm run lint:fix``` or ```yarn lint:fix```
 
-##### 5. Mocha test (only .jsx files)
+##### 5. Mocha test
 ```npm test``` or ```yarn test```
+
+##### 6. Mocha watcher
+```npm run test:watch``` or ```yarn test:watch```
+
+##### 7. Test coverage
+```npm run test:cover``` or ```yarn test:cover```
 
 ### Delpoy (production)
 

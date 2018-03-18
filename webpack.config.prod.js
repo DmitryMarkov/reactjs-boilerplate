@@ -64,7 +64,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify('production'),
       APP_NAME: JSON.stringify(appInfo.name),
       APP_VERSION: JSON.stringify(appInfo.version),
-      NO_MIDDLEWARE: true
+      MIDDLEWARE: false
     }),
     new ExtractTextPlugin('assets/css/[name].[hash].min.css'),
     new UglifyJsPlugin({
@@ -105,7 +105,21 @@ module.exports = {
         ]
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true
+              }
+            }
+          ]
+        })
+      },
+      {
+        test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -159,7 +173,7 @@ module.exports = {
             options: {
               // name: '[name].[ext]',
               outputPath: './assets/fonts/',
-              publicPath: '../../'
+              publicPath: '../../assets/fonts'
             }
           }
         ]

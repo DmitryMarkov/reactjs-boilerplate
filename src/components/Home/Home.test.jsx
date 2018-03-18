@@ -1,11 +1,18 @@
 /* eslint-disable */
 import React from 'react';
-import chai from 'chai';
+import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
-// import Home from './Home';
+import sinon from 'sinon';
+import Home from './Home';
 
-let expect = chai.expect;
+describe('<Home />', () => {
+  beforeEach(() => {
+    global.APP_NAME = 'Application name';
+    global.APP_VERSION = '1.0.0';
+    global.MIDDLEWARE = 'true';
 
-describe('<Home /> Component', () => {
-  it('Component sample test');
+  }),
+  it('renders <Home /> component', () => {
+    const wrapper = shallow(<Home />);
+  });
 });

@@ -2,7 +2,7 @@
   "globals": {
     "APP_NAME": true,
     "APP_VERSION": true,
-    "NO_MIDDLEWARE": true
+    "MIDDLEWARE": true
   },
   "parser": "babel-eslint",
   "parserOptions": {
@@ -10,19 +10,34 @@
     "sourceType": "module",
     "ecmaFeatures": {
         "jsx": true
-    },
+    }
   },
   "extends": "airbnb",
   "rules": {
-    "semi": ["error", "always"],
-    "quotes": ["error", "single"],
     "comma-dangle": ["error", "never"],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": true,
+        "peerDependencies": false
+      }
+    ],
     "jsx-a11y/anchor-is-valid": [ "error", {
       "components": [ "Link" ],
       "specialLink": [ "to" ]
     }],
+    "linebreak-style": 0,
+    "quotes": [
+      "error",
+      "single"
+    ],
     "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error"
+    "react/jsx-uses-vars": "error",
+    "semi": [
+      "error",
+      "always"
+    ],
   },
   "plugins": [
     "html"

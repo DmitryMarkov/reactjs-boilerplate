@@ -1,5 +1,6 @@
 # Builds
 dist
+package
 
 # IDE
 .idea
@@ -9,8 +10,17 @@ dist
 
 # Node files
 node_modules
+npm-debug.log
+package-lock.json
 yarn.lock
 yarn-error.log
 
 # Webpack logs
 webpack-stats.json
+
+# Tarball files
+*.tgz
+
+# Test
+.nyc_output
+coverage

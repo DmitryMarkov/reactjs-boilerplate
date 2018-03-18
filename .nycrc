@@ -1,0 +1,18 @@
+{
+  "all": false,
+  "cache": true,
+  "extension": [
+    ".js",
+    ".jsx"
+  ],
+  "exclude": [
+    "**/*.test.js",
+    "**/*.test.jsx",
+    "setupTests.js"
+  ],
+  "reporter": [
+    "html",
+    "lcov",
+    "text"
+  ]
+}

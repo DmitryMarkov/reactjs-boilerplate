@@ -1,8 +1,7 @@
 {
   "globals": {
     "APP_NAME": true,
-    "APP_VERSION": true,
-    "MIDDLEWARE": true
+    "APP_VERSION": true
   },
   "parser": "babel-eslint",
   "parserOptions": {

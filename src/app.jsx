@@ -1,17 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
+import { hot } from 'react-hot-loader';
 import Routes from './components/Routes';
 import './assets/css/main.scss';
 import '../public/favicon.ico';
 
-const HotMiddleware = () => (
-  MIDDLEWARE
-    ? <Routes />
-    : <AppContainer warnings={false}><Routes /></AppContainer>);
+const App = () => <Routes />;
 
-render(HotMiddleware(), document.getElementById('app'));
+render(App(), document.getElementById('app'));
 
-if (module.hot) {
-  module.hot.accept();
-}
+export default hot(module)(App);

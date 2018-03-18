@@ -9,8 +9,6 @@ describe('<Home />', () => {
   beforeEach(() => {
     global.APP_NAME = 'Application name';
     global.APP_VERSION = '1.0.0';
-    global.MIDDLEWARE = 'true';
-
   }),
   it('renders <Home /> component', () => {
     const wrapper = shallow(<Home />);

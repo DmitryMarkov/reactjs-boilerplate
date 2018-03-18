@@ -15,7 +15,7 @@
 ```npm run start``` or ```yarn start```
 
 ##### 2. Start WebpackDevServer with Hot Reload (dev)
-```npm run start:dec``` or ```yarn start:dev```
+```npm run start:dev``` or ```yarn start:dev```
 
 ##### 3a. Build project (bundle files to dist directory)
 ```npm run build``` or ```yarn build```

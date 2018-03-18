@@ -50,8 +50,7 @@ module.exports = (env) => {
       }),
       new webpack.DefinePlugin({
         APP_NAME: JSON.stringify(appInfo.name),
-        APP_VERSION: JSON.stringify(appInfo.version),
-        MIDDLEWARE
+        APP_VERSION: JSON.stringify(appInfo.version)
       }),
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.NamedModulesPlugin(),

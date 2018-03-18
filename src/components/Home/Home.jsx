@@ -5,7 +5,7 @@ import './Home.scss';
 const Home = () => (
   <div className="home">
     <div className="home-info">
-      {`${APP_NAME} v${APP_VERSION} hot-middleware=${MIDDLEWARE}`}
+      {`${APP_NAME} v${APP_VERSION}`}
     </div>
     <Link to="/hello-world">Go to HelloWorld</Link>
   </div>

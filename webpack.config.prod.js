@@ -145,7 +145,7 @@ module.exports = {
           {
             /*
              * For more browser support use file-loader
-             * Bundle fonts inline into .js file use url-loader
+             * To bundle fonts inline into .js file use url-loader
              */
             loader: 'file-loader',
             options: {

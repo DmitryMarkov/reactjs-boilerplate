@@ -14,7 +14,7 @@ module.exports = (env) => {
       './src/app.jsx'
     ],
     mode: 'development',
-    devtool: 'cheap-module-source-map',
+    devtool: 'eval',
     devServer: {
       contentBase: './dist',
       compress: true,

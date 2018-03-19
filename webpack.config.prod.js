@@ -2,8 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const appInfo = require('./package.json');
 
@@ -20,6 +20,21 @@ module.exports = {
       'normalize.css'
     ]
   },
+  mode: 'production',
+  optimization: {
+    minimizer: [
+      new UglifyJSPlugin({
+        uglifyOptions: {
+          output: {
+            comments: false
+          }
+        }
+      })
+    ],
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
@@ -28,25 +43,13 @@ module.exports = {
       favicon: './public/favicon.ico',
       inject: 'body'
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      /*
-       * Export .js files into different location
-       * filename: 'js/[name].[hash].min.js'
-       */
-      filename: '[name].[hash].min.js',
-      minChunks: Infinity
-    }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
       APP_NAME: JSON.stringify(appInfo.name),
       APP_VERSION: JSON.stringify(appInfo.version)
     }),
-    new ExtractTextPlugin('assets/css/[name].[hash].min.css'),
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        compress: true
-      }
+    new MiniCssExtractPlugin({
+      filename: 'assets/css/[name].[hash].min.css',
+      chunkFilename: 'assets/css/[name].[hash].css'
     })
   ],
   resolve: {
@@ -82,37 +85,33 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                minimize: true
-              }
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
             }
-          ]
-        })
+          }
+        ]
       },
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                minimize: true
-              }
-            },
-            {
-              loader: 'postcss-loader'
-            },
-            {
-              loader: 'sass-loader'
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
             }
-          ]
-        })
+          },
+          {
+            loader: 'postcss-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
       },
       {
         /*
@@ -133,7 +132,10 @@ module.exports = {
         test: /\.ico$/,
         use: [
           {
-            loader: 'url-loader'
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            }
           }
         ]
       },
@@ -142,7 +144,7 @@ module.exports = {
         use: [
           {
             /*
-             * More browser support use file-loader
+             * For more browser support use file-loader
              * Bundle fonts inline into .js file use url-loader
              */
             loader: 'file-loader',

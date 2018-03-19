@@ -3,11 +3,11 @@
 ### Installation
 
 ##### 1. Main App (In project directory)
-```npm install``` or ```yarn install```
+```npm i``` or ```yarn```
 ##### 2. ESLint (Install as global)
-```npm install -g eslint``` or ```yarn global add eslint```
+```npm i -g eslint``` or ```yarn global add eslint```
 ##### 3. Stylelint (Install as global)
-```npm install -g stylelint``` or ```yarn global add stylelint```
+```npm i -g stylelint``` or ```yarn global add stylelint```
 
 ### How to use it
 

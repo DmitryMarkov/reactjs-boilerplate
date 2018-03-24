@@ -17,6 +17,10 @@ package*
 .nycrc
 .stylelintrc
 
+# IDE
+.idea
+.vscode
+
 # macOS files
 .DS_Store
 

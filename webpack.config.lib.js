@@ -3,6 +3,8 @@ const webpack = require('webpack');
 
 const appInfo = require('./package.json');
 
+process.env.NODE_ENV = 'production';
+
 module.exports = (env) => {
   const MINIFY = env.MINIFY === 1;
   return {

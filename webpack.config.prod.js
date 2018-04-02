@@ -7,6 +7,8 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const appInfo = require('./package.json');
 
+process.env.NODE_ENV = 'production';
+
 module.exports = {
   entry: {
     main: [
@@ -134,7 +136,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
+              name: '[name].[ext]'
             }
           }
         ]

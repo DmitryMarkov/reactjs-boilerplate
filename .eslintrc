@@ -8,12 +8,15 @@
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
-        "jsx": true
+      "jsx": true
     }
   },
   "extends": "airbnb",
   "rules": {
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -22,10 +25,18 @@
         "peerDependencies": false
       }
     ],
-    "jsx-a11y/anchor-is-valid": [ "error", {
-      "components": [ "Link" ],
-      "specialLink": [ "to" ]
-    }],
+    "import/prefer-default-export": 1,
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": [
+          "Link"
+        ],
+        "specialLink": [
+          "to"
+        ]
+      }
+    ],
     "linebreak-style": 0,
     "quotes": [
       "error",
@@ -33,6 +44,12 @@
     ],
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
+    "react/prefer-stateless-function": [
+      1,
+      {
+        "ignorePureComponents": true
+      }
+    ],
     "semi": [
       "error",
       "always"

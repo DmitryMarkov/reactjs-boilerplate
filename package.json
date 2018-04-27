@@ -1,7 +1,7 @@
 {
   "name": "reactjs-sandbox",
   "appName": "HelloWorld",
-  "version": "0.6.92",
+  "version": "0.6.93",
   "description": "ReactJS Sandbox",
   "main": "./lib/HelloWorld.min.js",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "mocha \"src/**/*.test.js*\" -r babel-core/register -r ignore-styles -r setupTests.js",
     "test:cover": "nyc npm test",
-    "test:watch": "npm run test -- --watch",
+    "test:watch": "npm run test -- --watch --watch-extensions js,jsx",
     "coveralls": "npm run test:cover && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint --ext .js,.jsx src && npm run lint:post",
     "lint:fix": "eslint --fix --ext .jsx,.js src && npm run lint:post",

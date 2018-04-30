@@ -123,7 +123,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: 'assets/images/'
+              outputPath: './assets/images/',
+              publicPath: '../../assets/images'
             }
           }
         ]

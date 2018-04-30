@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const appInfo = require('./package.json');
 
@@ -11,7 +12,17 @@ module.exports = (env) => {
     ],
     mode: 'production',
     optimization: {
-      minimize: MINIFY
+      minimizer: [
+        new UglifyJSPlugin({
+          uglifyOptions: {
+            mangle: MINIFY,
+            output: {
+              comments: !MINIFY,
+              beautify: !MINIFY
+            }
+          }
+        })
+      ]
     },
     plugins: [
       new webpack.DefinePlugin({

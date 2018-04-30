@@ -9,7 +9,7 @@ const config = require('./webpack.config.dev.js')({ MIDDLEWARE: true });
 
 const compiler = webpack(config);
 
-const { DEBUG, PORT = 3000 } = process.env;
+const { DEBUG, PORT = process.argv[2] || 3000 } = process.env;
 
 if (DEBUG === '1') app.use(morgan('combined'));
 

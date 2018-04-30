@@ -1,7 +1,7 @@
 {
   "name": "reactjs-sandbox",
   "appName": "HelloWorld",
-  "version": "0.6.94",
+  "version": "0.6.95",
   "description": "ReactJS Sandbox",
   "main": "./lib/HelloWorld.min.js",
   "repository": "git@github.com:crazyjuice/reactjs-sandbox.git",

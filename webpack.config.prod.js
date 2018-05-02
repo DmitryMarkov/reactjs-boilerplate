@@ -27,7 +27,8 @@ module.exports = {
         uglifyOptions: {
           output: {
             comments: false
-          }
+          },
+          sourceMap: true
         }
       })
     ],
@@ -69,7 +70,10 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            plugins: ['transform-react-remove-prop-types']
+          }
         }
       },
       {

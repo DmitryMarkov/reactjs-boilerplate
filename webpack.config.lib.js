@@ -19,7 +19,8 @@ module.exports = (env) => {
             output: {
               comments: !MINIFY,
               beautify: !MINIFY
-            }
+            },
+            sourceMap: !MINIFY
           }
         })
       ]

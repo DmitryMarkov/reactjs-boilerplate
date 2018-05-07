@@ -11,17 +11,26 @@
 
 ### How to use it
 
-##### 1. Start WebpackHotMiddleware Server (dev)
-```npm run start``` or ```yarn start```
+##### 1a. Start WebpackHotMiddleware Server (dev)
+```npm start``` or ```yarn start```
+
+##### 1b. Start WebpackHotMiddleware Server (dev) on different port
+```npm start {PORT}``` or ```yarn start {PORT}```
+
+##### 1c. Start WebpackHotMiddleware Server (dev) in DEBUG mode (morgan)
+```DEBUG=1 npm start``` or ```DEBUG=1 yarn start```
 
 ##### 2. Start WebpackDevServer with Hot Reload (dev)
 ```npm run start:dev``` or ```yarn start:dev```
 
-##### 3a. Build project (bundle files to dist directory)
+##### 3a. Build project (dist directory)
 ```npm run build``` or ```yarn build```
 
-##### 3b. Build UMD library (bundle minified and unminified files to lib directory)
+##### 3b. Build UMD library (lib directory)
 ```npm run build:lib``` or ```yarn build:lib```
+
+##### 3c. Bundle analyzer (build project or UMD library first!)
+```npm run analyze``` or ```yarn analyze```
 
 ##### 4. ESLint source code
 ```npm run lint``` or ```yarn lint```
@@ -39,10 +48,13 @@
 
 ### Delpoy (production)
 
-##### 1a. Start Express Production Server
+##### 1a. Start Express Production Server (build project first!)
 ```npm run server``` or ```yarn server```
 
-##### 1b. Start Express Production Server in DEBUG mode (morgan)
+##### 1b. Start Express Production Server on different port
+```npm run server {PORT}``` or ```yarn server {PORT}```
+
+##### 1c. Start Express Production Server in DEBUG mode (morgan)
 ```DEBUG=1 npm run server``` or ```DEBUG=1 yarn server```
 
 ##### 2. Settigs for Nginx (React Router v4 BrowserRouter settings)

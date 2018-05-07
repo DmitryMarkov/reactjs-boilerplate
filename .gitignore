@@ -16,8 +16,8 @@ package-lock.json
 yarn.lock
 yarn-error.log
 
-# Webpack logs
-webpack-stats.json
+# Webpack stats
+*stats.json
 
 # Tarball files
 *.tgz

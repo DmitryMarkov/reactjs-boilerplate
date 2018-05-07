@@ -39,7 +39,9 @@ index.js
 postcss.config.js
 server.js
 webpack.config*
-webpack-stats.json
+
+# Webpack stats
+*stats.json
 
 # Tarball files
 *.tgz

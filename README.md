@@ -13,15 +13,18 @@
 
 ##### 1a. Start WebpackHotMiddleware Server (dev)
 ```npm start``` or ```yarn start```
+```npm start:analyze``` or ```yarn start:analyze```
 
 ##### 1b. Start WebpackHotMiddleware Server (dev) on different port
 ```npm start {PORT}``` or ```yarn start {PORT}```
 
 ##### 1c. Start WebpackHotMiddleware Server (dev) in DEBUG mode (morgan)
 ```DEBUG=1 npm start``` or ```DEBUG=1 yarn start```
+```npm start 3000 1``` or ```yarn start 3000 1```
 
 ##### 2. Start WebpackDevServer with Hot Reload (dev)
 ```npm run start:dev``` or ```yarn start:dev```
+```npm run start:dev:analyze``` or ```yarn start:dev:analyze```
 
 ##### 3a. Build project (dist directory)
 ```npm run build``` or ```yarn build```

@@ -23,14 +23,11 @@
     "lib": "npm run lint && cross-env NODE_ENV=production webpack --color --progress --config webpack.config.lib.js --json > webpack-stats.json",
     "build:lib": "rimraf lib && npm run lib -- --env.MINIFY=1",
     "build:lib:analyze": "npm run build:lib -- --env.ANALYZE=1",
-
     "server": "node index.js",
     "server:dev": "node server.js",
     "serve": "npm run lint && webpack-dev-server --open --color --progress --config webpack.config.dev.js --env.MIDDLEWARE=0",
-
     "start": "npm run lint && npm run server:dev",
     "start:analyze": "npm run lint && npm run server:dev --env.ANALYZE=1",
-
     "start:dev": "npm run serve",
     "start:dev:analyze": "npm run serve -- --env.ANALYZE=1"
   },

@@ -25,12 +25,14 @@
 
 ##### 3a. Build project (dist directory)
 ```npm run build``` or ```yarn build```
+```npm run build:analyze``` or ```yarn build:analyze```
 
 ##### 3b. Build UMD library (lib directory)
 ```npm run build:lib``` or ```yarn build:lib```
+```npm run build:lib:analyze``` or ```yarn build:lib:analyze```
 
-##### 3c. Bundle analyzer (build project or UMD library first!)
-```npm run analyze``` or ```yarn analyze```
+##### 3c. Bundle analyzer (JSON format)
+```npm run analyze {file_name}``` or ```yarn analyze {file_name}```
 
 ##### 4. ESLint source code
 ```npm run lint``` or ```yarn lint```

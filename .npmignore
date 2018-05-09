@@ -2,6 +2,9 @@
 dist
 package*
 
+# Bundle analyzer
+report.html
+
 # CI
 .coveralls.yml
 .travis.yml

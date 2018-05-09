@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const appInfo = require('./package.json');
 
@@ -35,7 +36,10 @@ module.exports = (env) => {
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoEmitOnErrorsPlugin()
+      new webpack.NoEmitOnErrorsPlugin(),
+      new BundleAnalyzerPlugin({
+        analyzerMode: env.ANALYZE ? 'server' : 'disabled'
+      })
     ],
     resolve: {
       extensions: ['.js', '.jsx']

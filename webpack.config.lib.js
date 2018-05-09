@@ -1,10 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const appInfo = require('./package.json');
 
 module.exports = (env) => {
+  const ANALYZE = env.ANALYZE === 1;
   const MINIFY = env.MINIFY === 1;
   return {
     entry: [
@@ -29,6 +31,9 @@ module.exports = (env) => {
       new webpack.DefinePlugin({
         APP_NAME: JSON.stringify(appInfo.name),
         APP_VERSION: JSON.stringify(appInfo.version)
+      }),
+      new BundleAnalyzerPlugin({
+        analyzerMode: ANALYZE ? 'server' : 'disabled'
       })
     ],
     resolve: {

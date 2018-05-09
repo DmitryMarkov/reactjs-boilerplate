@@ -38,7 +38,7 @@ module.exports = (env) => {
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
       new BundleAnalyzerPlugin({
-        analyzerMode: 'server'
+        analyzerMode: env.ANALYZE ? 'server' : 'disabled'
       })
     ],
     resolve: {

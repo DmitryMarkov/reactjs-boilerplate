@@ -5,11 +5,14 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const morgan = require('morgan');
-const config = require('./webpack.config.dev.js')({ MIDDLEWARE: true });
+const config = require('./webpack.config.dev.js')({
+  MIDDLEWARE: true,
+  ANALYZE: process.env.npm_config_env_ANALYZE === '1'
+});
 
 const compiler = webpack(config);
 
-const { DEBUG, PORT = process.argv[2] || 3000 } = process.env;
+const { DEBUG = process.argv[3], PORT = process.argv[2] || 3000 } = process.env;
 
 if (DEBUG === '1') app.use(morgan('combined'));
 

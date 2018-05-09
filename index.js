@@ -7,7 +7,7 @@ const morgan = require('morgan');
 
 const DIST_DIR = path.join(__dirname, '/dist');
 
-const { DEBUG, PORT = process.argv[2] || 3000 } = process.env;
+const { DEBUG = process.argv[3], PORT = process.argv[2] || 3000 } = process.env;
 
 if (DEBUG === '1') app.use(morgan('combined'));
 

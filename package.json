@@ -17,17 +17,22 @@
     "lint:post": "echo \"No ESLint errors!!!\"",
     "clean": "rimraf dist lib package .nyc_output coverage *.tgz webpack-stats* yarn-error*",
     "analyze": "webpack-bundle-analyzer",
-    "build": "npm run lint && cross-env NODE_ENV=production webpack --color --progress --config webpack.config.prod.js --env.ANALYZE=0 --json > webpack-stats.json",
-    "build:analyze": "npm run lint && cross-env NODE_ENV=production webpack --color --progress --config webpack.config.prod.js --env.ANALYZE=1",
-    "lib": "cross-env NODE_ENV=production webpack --color --progress --config webpack.config.lib.js --json > webpack-stats.json",
-    "build:lib": "npm run lint && rimraf lib && npm run lib -- --env.MINIFY=1 --env.ANALYZE=0",
-    "build:lib:analyze": "npm run lint && rimraf lib && npm run lib -- --env.MINIFY=1 --env.ANALYZE=1",
+    "pre:build": "npm run lint && cross-env NODE_ENV=production webpack --color --progress --config webpack.config.prod.js --json > webpack-stats.json",
+    "build": "npm run pre:build -- --env.ANALYZE=0",
+    "build:analyze": "npm run pre:build -- --env.ANALYZE=1",
+    "lib": "npm run lint && cross-env NODE_ENV=production webpack --color --progress --config webpack.config.lib.js --json > webpack-stats.json",
+    "build:lib": "rimraf lib && npm run lib -- --env.MINIFY=1",
+    "build:lib:analyze": "npm run build:lib -- --env.ANALYZE=1",
+
     "server": "node index.js",
     "server:dev": "node server.js",
-    "serve": "webpack-dev-server --open --color --progress --config webpack.config.dev.js --env.MIDDLEWARE=0",
+    "serve": "npm run lint && webpack-dev-server --open --color --progress --config webpack.config.dev.js --env.MIDDLEWARE=0",
+
     "start": "npm run lint && npm run server:dev",
-    "start:analyze": "npm run lint && npm run server:dev",
-    "start:dev": "npm run lint && npm run serve"
+    "start:analyze": "npm run lint && npm run server:dev --env.ANALYZE=1",
+
+    "start:dev": "npm run serve",
+    "start:dev:analyze": "npm run serve -- --env.ANALYZE=1"
   },
   "devDependencies": {
     "autoprefixer": "^8.4.1",

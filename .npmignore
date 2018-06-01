@@ -37,9 +37,13 @@ yarn.lock
 public
 src
 
+# Scripts
+scripts
+
 # Webpack files
 index.js
 postcss.config.js
+postinstall.js
 server.js
 webpack.config*
 

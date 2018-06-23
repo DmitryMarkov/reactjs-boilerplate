@@ -111,8 +111,7 @@ module.exports = (env) => {
             {
               loader: 'css-loader',
               options: {
-                minimize: MINIFY,
-                sourceMap: SOURCE_MAP
+                minimize: MINIFY
               }
             }
           ]

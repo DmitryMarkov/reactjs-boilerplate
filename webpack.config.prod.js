@@ -10,6 +10,7 @@ const appInfo = require('./package.json');
 
 module.exports = (env) => {
   const ANALYZE = env.ANALYZE === 1;
+  const SOURCE_MAP = env.SOURCE_MAP === 1;
   return {
     entry: {
       main: [
@@ -27,11 +28,13 @@ module.exports = (env) => {
     optimization: {
       minimizer: [
         new UglifyJSPlugin({
+          parallel: true,
+          sourceMap: SOURCE_MAP,
           uglifyOptions: {
+            cache: true,
             output: {
               comments: false
-            },
-            sourceMap: true
+            }
           }
         })
       ],
@@ -39,6 +42,7 @@ module.exports = (env) => {
         chunks: 'all'
       }
     },
+    devtool: SOURCE_MAP && 'source-map',
     plugins: [
       new CleanWebpackPlugin(['dist']),
       new HtmlWebpackPlugin({
@@ -112,14 +116,23 @@ module.exports = (env) => {
             {
               loader: 'css-loader',
               options: {
-                minimize: true
+                importLoaders: 2,
+                minimize: true,
+                sourceMap: SOURCE_MAP
               }
             },
             {
-              loader: 'postcss-loader'
+              loader: 'postcss-loader',
+              options: {
+                importLoaders: 1,
+                sourceMap: SOURCE_MAP
+              }
             },
             {
-              loader: 'sass-loader'
+              loader: 'sass-loader',
+              options: {
+                sourceMap: SOURCE_MAP
+              }
             }
           ]
         },

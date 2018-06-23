@@ -15,7 +15,7 @@ module.exports = (env) => {
       './src/app.jsx'
     ],
     mode: 'development',
-    devtool: 'eval',
+    devtool: 'cheap-module-eval-source-map',
     devServer: {
       contentBase: './dist',
       compress: true,
@@ -78,12 +78,14 @@ module.exports = (env) => {
             {
               loader: 'css-loader',
               options: {
+                importLoaders: 2,
                 sourceMap: true
               }
             },
             {
               loader: 'postcss-loader',
               options: {
+                importLoaders: 1,
                 sourceMap: true
               }
             },

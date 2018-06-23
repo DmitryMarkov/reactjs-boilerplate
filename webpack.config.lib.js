@@ -8,6 +8,7 @@ const appInfo = require('./package.json');
 module.exports = (env) => {
   const ANALYZE = env.ANALYZE === 1;
   const MINIFY = env.MINIFY === 1;
+  const SOURCE_MAP = env.SOURCE_MAP === 1;
   return {
     entry: [
       `./src/components/${appInfo.appName}/${appInfo.appName}.jsx`
@@ -16,17 +17,20 @@ module.exports = (env) => {
     optimization: {
       minimizer: [
         new UglifyJSPlugin({
+          parallel: true,
+          sourceMap: SOURCE_MAP,
           uglifyOptions: {
+            cache: true,
             mangle: MINIFY,
             output: {
               comments: !MINIFY,
               beautify: !MINIFY
-            },
-            sourceMap: !MINIFY
+            }
           }
         })
       ]
     },
+    devtool: SOURCE_MAP && 'source-map',
     plugins: [
       new webpack.DefinePlugin({
         APP_NAME: JSON.stringify(appInfo.name),
@@ -121,14 +125,23 @@ module.exports = (env) => {
             {
               loader: 'css-loader',
               options: {
-                minimize: MINIFY
+                importLoaders: 2,
+                minimize: MINIFY,
+                sourceMap: SOURCE_MAP
               }
             },
             {
-              loader: 'postcss-loader'
+              loader: 'postcss-loader',
+              options: {
+                importLoaders: 1,
+                sourceMap: SOURCE_MAP
+              }
             },
             {
-              loader: 'sass-loader'
+              loader: 'sass-loader',
+              options: {
+                sourceMap: SOURCE_MAP
+              }
             }
           ]
         },

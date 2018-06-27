@@ -12,18 +12,10 @@ module.exports = (env) => {
   const ANALYZE = env.ANALYZE === 1;
   const SOURCE_MAP = env.SOURCE_MAP === 1;
   return {
-    entry: {
-      main: [
-        'babel-polyfill',
-        './src/app.jsx'
-      ],
-      vendor: [
-        'lodash',
-        'react',
-        'react-dom',
-        'normalize.css'
-      ]
-    },
+    entry: [
+      'babel-polyfill',
+      './src/app.jsx'
+    ],
     mode: 'production',
     optimization: {
       minimizer: [
@@ -40,7 +32,8 @@ module.exports = (env) => {
       ],
       splitChunks: {
         chunks: 'all'
-      }
+      },
+      runtimeChunk: true
     },
     devtool: SOURCE_MAP && 'source-map',
     plugins: [

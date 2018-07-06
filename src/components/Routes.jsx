@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 import {
   BrowserRouter as Router,
   Route,
   browserHistory
-} from 'react-router-dom';
-import Home from './Home/Home';
-import HelloWorld from './HelloWorld/HelloWorld';
+} from 'react-router-dom'
+import Home from './Home/Home'
+import HelloWorld from './HelloWorld/HelloWorld'
 
 const Routes = () => (
   <Router history={browserHistory}>
@@ -14,6 +14,6 @@ const Routes = () => (
       <Route path="/hello-world" component={HelloWorld} />
     </div>
   </Router>
-);
+)
 
-export default Routes;
+export default Routes

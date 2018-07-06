@@ -1,5 +1,5 @@
-# ReactJS Sandbox
-### ReactJS Sandbox with webpack 4
+# ReactJS Boilerplate
+### ReactJS Boilerplate with webpack 4
 ### Installation
 
 ##### 1. Main App (In project directory)

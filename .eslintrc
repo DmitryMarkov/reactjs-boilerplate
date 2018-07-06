@@ -69,8 +69,8 @@
     ],
     "semi": [
       "error",
-      "always"
-    ],
+      "never"
+    ]
   },
   "plugins": [
     "html",

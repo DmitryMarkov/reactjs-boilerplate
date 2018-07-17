@@ -66,10 +66,6 @@
       {
         "ignorePureComponents": true
       }
-    ],
-    "semi": [
-      "error",
-      "never"
     ]
   },
   "plugins": [

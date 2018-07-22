@@ -1,18 +1,19 @@
-const webpack = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const appInfo = require('./package.json');
+const appInfo = require('./package.json')
 
-module.exports = (env) => {
-  const MIDDLEWARE = env.MIDDLEWARE !== 0;
+module.exports = env => {
+  const MIDDLEWARE = env.MIDDLEWARE !== 0
   return {
     entry: [
       'babel-polyfill',
       MIDDLEWARE
         ? 'webpack-hot-middleware/client?reload=true'
         : 'react-hot-loader/patch',
-      './src/app.jsx'
+      './src/app.js'
     ],
     mode: 'development',
     devtool: 'cheap-module-eval-source-map',
@@ -42,7 +43,7 @@ module.exports = (env) => {
       })
     ],
     resolve: {
-      extensions: ['.js', '.jsx']
+      extensions: ['.js']
     },
     /*
     * Only for WebpackHotMiddleware
@@ -55,7 +56,7 @@ module.exports = (env) => {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.js$/,
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader'
@@ -129,5 +130,5 @@ module.exports = (env) => {
         }
       ]
     }
-  };
-};
+  }
+}

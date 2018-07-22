@@ -1,19 +1,20 @@
 {
   "name": "reactjs-boilerplate",
   "appName": "HelloWorld",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "ReactJS Boilerplate",
   "main": "./lib/HelloWorld.min.js",
   "repository": "git@github.com:crazyjuice/reactjs-boilerplate.git",
   "author": "Piotr Sikora",
   "license": "MIT",
   "scripts": {
+    "precommit": "lint-staged",
     "test": "mocha \"src/**/*.test.js*\" -r babel-core/register -r ignore-styles -r setupTests.js",
     "test:cover": "nyc npm test",
-    "test:watch": "npm run test -- --watch --watch-extensions js,jsx",
+    "test:watch": "npm run test -- --watch --watch-extensions js",
     "coveralls": "npm run test:cover && cat ./coverage/lcov.info | coveralls",
-    "lint": "eslint --ext .js,.jsx src && npm run lint:post",
-    "lint:fix": "eslint --fix --ext .jsx,.js src && npm run lint:post",
+    "lint": "eslint --ext .js src && npm run lint:post",
+    "lint:fix": "eslint --fix --ext .js src && npm run lint:post",
     "lint:post": "echo \"No ESLint errors!!!\"",
     "clean": "rimraf dist lib package .nyc_output coverage *.tgz webpack-stats* yarn-error*",
     "analyze": "webpack-bundle-analyzer",
@@ -32,6 +33,12 @@
     "start:analyze": "npm run lint && npm run server:dev --env.ANALYZE=1",
     "start:dev": "npm run serve",
     "start:dev:analyze": "npm run serve -- --env.ANALYZE=1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix --ext .js src",
+      "git add"
+    ]
   },
   "devDependencies": {
     "autoprefixer": "^9.0.1",
@@ -66,8 +73,10 @@
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^0.14.3",
     "ignore-styles": "^5.0.1",
     "jsdom": "^11.11.0",
+    "lint-staged": "^7.2.0",
     "lodash": "^4.17.10",
     "mini-css-extract-plugin": "^0.4.1",
     "mocha": "^5.2.0",
@@ -76,6 +85,7 @@
     "node-sass": "^4.9.2",
     "normalize.css": "^8.0.0",
     "nyc": "^12.0.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
     "postcss-loader": "^2.1.6",
     "prettier": "^1.13.7",
     "prop-types": "^15.6.2",

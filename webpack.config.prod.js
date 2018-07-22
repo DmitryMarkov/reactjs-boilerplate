@@ -1,21 +1,20 @@
-const path = require('path');
-const webpack = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
-const appInfo = require('./package.json');
+const appInfo = require('./package.json')
 
-module.exports = (env) => {
-  const ANALYZE = env.ANALYZE === 1;
-  const SOURCE_MAP = env.SOURCE_MAP === 1;
+module.exports = env => {
+  const ANALYZE = env.ANALYZE === 1
+  const SOURCE_MAP = env.SOURCE_MAP === 1
   return {
-    entry: [
-      'babel-polyfill',
-      './src/app.jsx'
-    ],
+    entry: ['babel-polyfill', './src/app.js'],
     mode: 'production',
     optimization: {
       minimizer: [
@@ -28,7 +27,8 @@ module.exports = (env) => {
               comments: false
             }
           }
-        })
+        }),
+        new OptimizeCSSAssetsPlugin({})
       ],
       splitChunks: {
         chunks: 'all'
@@ -50,14 +50,14 @@ module.exports = (env) => {
       }),
       new MiniCssExtractPlugin({
         filename: 'assets/css/[name].[hash].min.css',
-        chunkFilename: 'assets/css/[name].[hash].css'
+        chunkFilename: 'assets/css/[name].[hash].min.css'
       }),
       new BundleAnalyzerPlugin({
         analyzerMode: ANALYZE ? 'server' : 'disabled'
       })
     ],
     resolve: {
-      extensions: ['.js', '.jsx']
+      extensions: ['.js']
     },
     output: {
       /*
@@ -70,7 +70,7 @@ module.exports = (env) => {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.js$/,
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
@@ -175,5 +175,5 @@ module.exports = (env) => {
         }
       ]
     }
-  };
-};
+  }
+}

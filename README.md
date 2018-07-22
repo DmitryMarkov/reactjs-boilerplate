@@ -80,3 +80,12 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [QSA,L]
 ```
+
+### Prettier (VSCode settings)
+```
+"editor.formatOnSave": false,
+"[javascript]": {
+  "editor.formatOnSave": true
+},
+"eslint.autoFixOnSave": true
+  ```

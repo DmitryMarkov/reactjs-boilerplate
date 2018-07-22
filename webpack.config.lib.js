@@ -1,18 +1,19 @@
-const path = require('path');
-const webpack = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
-const appInfo = require('./package.json');
+const appInfo = require('./package.json')
 
-module.exports = (env) => {
-  const ANALYZE = env.ANALYZE === 1;
-  const MINIFY = env.MINIFY === 1;
-  const SOURCE_MAP = env.SOURCE_MAP === 1;
+module.exports = env => {
+  const ANALYZE = env.ANALYZE === 1
+  const MINIFY = env.MINIFY === 1
+  const SOURCE_MAP = env.SOURCE_MAP === 1
   return {
-    entry: [
-      `./src/components/${appInfo.appName}/${appInfo.appName}.jsx`
-    ],
+    entry: [`./src/components/${appInfo.appName}/${appInfo.appName}.js`],
     mode: 'production',
     optimization: {
       minimizer: [
@@ -27,7 +28,8 @@ module.exports = (env) => {
               beautify: !MINIFY
             }
           }
-        })
+        }),
+        new OptimizeCSSAssetsPlugin({})
       ]
     },
     devtool: SOURCE_MAP && 'source-map',
@@ -36,12 +38,15 @@ module.exports = (env) => {
         APP_NAME: JSON.stringify(appInfo.name),
         APP_VERSION: JSON.stringify(appInfo.version)
       }),
+      new MiniCssExtractPlugin({
+        filename: `${appInfo.appName}.min.css`
+      }),
       new BundleAnalyzerPlugin({
         analyzerMode: ANALYZE ? 'server' : 'disabled'
       })
     ],
     resolve: {
-      extensions: ['.js', '.jsx']
+      extensions: ['.js']
     },
     output: {
       filename: `${appInfo.appName}${MINIFY ? '.min.js' : '.js'}`,
@@ -85,7 +90,7 @@ module.exports = (env) => {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.js$/,
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader'
@@ -105,9 +110,7 @@ module.exports = (env) => {
         {
           test: /\.css$/,
           use: [
-            {
-              loader: 'style-loader'
-            },
+            MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
               options: {
@@ -119,9 +122,7 @@ module.exports = (env) => {
         {
           test: /\.scss$/,
           use: [
-            {
-              loader: 'style-loader'
-            },
+            MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
               options: {
@@ -171,5 +172,5 @@ module.exports = (env) => {
         }
       ]
     }
-  };
-};
+  }
+}

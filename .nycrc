@@ -2,12 +2,10 @@
   "all": false,
   "cache": true,
   "extension": [
-    ".js",
-    ".jsx"
+    ".js"
   ],
   "exclude": [
     "**/*.test.js",
-    "**/*.test.jsx",
     "setupTests.js"
   ],
   "reporter": [

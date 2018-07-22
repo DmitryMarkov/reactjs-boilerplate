@@ -59,7 +59,7 @@
       "error",
       "single"
     ],
-    "react/jsx-filename-extension": 0,
+    "react/jsx-filename-extension": "none",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/prefer-stateless-function": [

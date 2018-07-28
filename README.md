@@ -81,6 +81,12 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [QSA,L]
 ```
 
+### Git CRLF & LF
+
+```
+git config --global core.autocrlf input
+```
+
 ### Prettier (VSCode settings)
 ```
 "editor.formatOnSave": false,

@@ -1,12 +1,10 @@
-const express = require('express')
+import express from 'express'
+import fs from 'fs'
+import path from 'path'
+import morgan from 'morgan'
 
 const app = express()
-const fs = require('fs')
-const path = require('path')
-const morgan = require('morgan')
-
 const DIST_DIR = path.join(__dirname, '/dist')
-
 const { DEBUG = process.argv[3], PORT = process.argv[2] || 3000 } = process.env
 
 if (DEBUG === '1') app.use(morgan('combined'))

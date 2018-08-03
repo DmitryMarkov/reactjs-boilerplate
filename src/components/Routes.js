@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-  BrowserRouter as Router,
-  Route,
-  browserHistory
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route, browserHistory } from 'react-router-dom'
 import Home from './Home/Home'
 import HelloWorld from './HelloWorld/HelloWorld'
 

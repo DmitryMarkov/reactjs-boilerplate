@@ -1,8 +1,8 @@
 const webpack = require('webpack')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin
+const BundleAnalyzer = require('webpack-bundle-analyzer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const { BundleAnalyzerPlugin } = BundleAnalyzer
 const appInfo = require('./package.json')
 
 module.exports = env => {
@@ -10,9 +10,7 @@ module.exports = env => {
   return {
     entry: [
       'babel-polyfill',
-      MIDDLEWARE
-        ? 'webpack-hot-middleware/client?reload=true'
-        : 'react-hot-loader/patch',
+      MIDDLEWARE ? 'webpack-hot-middleware/client?reload=true' : 'react-hot-loader/patch',
       './src/app.js'
     ],
     mode: 'development',

@@ -1,17 +1,16 @@
-const express = require('express')
+import express from 'express'
+import webpack from 'webpack'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
+import morgan from 'morgan'
 
 const app = express()
-const webpack = require('webpack')
-const webpackDevMiddleware = require('webpack-dev-middleware')
-const webpackHotMiddleware = require('webpack-hot-middleware')
-const morgan = require('morgan')
 const config = require('./webpack.config.dev.js')({
   MIDDLEWARE: true,
   ANALYZE: process.env.npm_config_env_ANALYZE === '1'
 })
 
 const compiler = webpack(config)
-
 const { DEBUG = process.argv[3], PORT = process.argv[2] || 3000 } = process.env
 
 if (DEBUG === '1') app.use(morgan('combined'))

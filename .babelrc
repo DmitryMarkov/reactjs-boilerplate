@@ -1,6 +1,15 @@
 {
   "presets": [
-    "env",
+    [
+      "env",
+      {
+        "targets": {
+          "browser": [
+            "ie >= 11"
+          ]
+        }
+      }
+    ],
     "react"
   ],
   "plugins": [

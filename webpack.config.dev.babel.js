@@ -1,9 +1,9 @@
-const webpack = require('webpack')
-const BundleAnalyzer = require('webpack-bundle-analyzer')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+import webpack from 'webpack'
+import BundleAnalyzer from 'webpack-bundle-analyzer'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import appInfo from './package.json'
 
 const { BundleAnalyzerPlugin } = BundleAnalyzer
-const appInfo = require('./package.json')
 
 module.exports = env => {
   const MIDDLEWARE = env.MIDDLEWARE !== 0

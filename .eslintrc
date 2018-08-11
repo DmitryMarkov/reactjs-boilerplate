@@ -15,7 +15,8 @@
   "extends": [
     "airbnb",
     "prettier",
-    "prettier/react"
+    "prettier/react",
+    "prettier/standard"
   ],
   "rules": {
     "prettier/prettier": "error",

@@ -1,4 +1,5 @@
 {
+  "extends": "stylelint-config-standard",
   "rules": {
     "block-no-empty": null,
     "color-no-invalid-hex": true,
@@ -7,10 +8,12 @@
       "except": ["value"]
     }],
     "max-empty-lines": 2,
-    "rule-empty-line-before": [ "always", {
-      "except": ["first-nested"],
-      "ignore": ["after-comment"]
-    } ],
+    "rule-empty-line-before": [
+      "always", {
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
+      }
+    ],
     "block-opening-brace-space-before": "always",
     "block-opening-brace-newline-after": "always"
   }

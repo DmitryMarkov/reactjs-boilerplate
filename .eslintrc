@@ -15,15 +15,14 @@
   "extends": [
     "airbnb",
     "prettier",
-    "prettier/react"
+    "prettier/react",
+    "prettier/standard"
   ],
   "rules": {
+    "prettier/prettier": "error",
     "no-debugger": 0,
     "no-alert": 0,
-    "comma-dangle": [
-      "error",
-      "never"
-    ],
+    "comma-dangle": ["error", "never"],
     "prefer-const": [
       "error",
       {
@@ -42,26 +41,11 @@
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
-        "components": [
-          "Link"
-        ],
-        "specialLink": [
-          "to"
-        ]
+        "components": ["Link"],
+        "specialLink": ["to"]
       }
     ],
     "linebreak-style": 0,
-    "prettier/prettier": [
-      "error",
-      {
-        "bracketSpacing": true,
-        "printWidth": 100,
-        "semi": false,
-        "singleQuote": true,
-        "tabWidth": 2,
-        "trailingComma": "none"
-      }
-    ],
     "quotes": [
       "error",
       "single"
@@ -83,6 +67,7 @@
   ],
   "env": {
     "browser": true,
+    "es6": true,
     "mocha": true,
     "node": true
   }

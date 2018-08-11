@@ -56,6 +56,18 @@ module.exports = env => {
       path: path.resolve(__dirname, 'lib')
     },
     externals: {
+      lodash: {
+        commonjs: 'lodash',
+        commonjs2: 'lodash',
+        amd: 'lodash',
+        root: '_'
+      },
+      'prop-types': {
+        commonjs: 'prop-types',
+        commonjs2: 'prop-types',
+        amd: 'prop-types',
+        root: 'PropTypes'
+      },
       react: {
         commonjs: 'react',
         commonjs2: 'react',
@@ -74,17 +86,11 @@ module.exports = env => {
         amd: 'react-router-dom',
         root: 'ReactRouterDOM'
       },
-      'prop-types': {
-        commonjs: 'prop-types',
-        commonjs2: 'prop-types',
-        amd: 'prop-types',
-        root: 'PropTypes'
-      },
-      lodash: {
-        commonjs: 'lodash',
-        commonjs2: 'lodash',
-        amd: 'lodash',
-        root: '_'
+      'react-hot-loader': {
+        commonjs: 'react-hot-loader',
+        commonjs2: 'react-hot-loader',
+        amd: 'react-hot-loader',
+        root: 'hot'
       }
     },
     module: {

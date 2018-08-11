@@ -37,7 +37,7 @@
         "peerDependencies": false
       }
     ],
-    "import/prefer-default-export": 1,
+    "import/prefer-default-export": 0,
     "jsx-a11y/anchor-is-valid": [
       "error",
       {

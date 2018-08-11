@@ -4,9 +4,7 @@
       "env",
       {
         "targets": {
-          "browser": [
-            "ie >= 11"
-          ]
+          "browser": ["ie >= 11"]
         }
       }
     ],

@@ -9,7 +9,7 @@ module.exports = env => {
   const MIDDLEWARE = env.MIDDLEWARE !== 0
   return {
     entry: [
-      'babel-polyfill',
+      '@babel/polyfill',
       MIDDLEWARE ? 'webpack-hot-middleware/client?reload=true' : 'react-hot-loader/patch',
       './src/app.js'
     ],

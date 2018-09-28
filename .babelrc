@@ -1,18 +1,16 @@
 {
   "presets": [
     [
-      "env",
+      "@babel/env",
       {
-        "targets": {
-          "browser": ["ie >= 11"]
-        }
+        "targets": "> 0.25%, not dead"
       }
     ],
-    "react"
+    "@babel/react"
   ],
   "plugins": [
     "react-hot-loader/babel",
-    "transform-class-properties",
-    "transform-object-rest-spread",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread"
   ]
 }

@@ -14,7 +14,7 @@ module.exports = env => {
   const ANALYZE = env.ANALYZE === 1
   const SOURCE_MAP = env.SOURCE_MAP === 1
   return {
-    entry: ['babel-polyfill', './src/app.js'],
+    entry: ['@babel/polyfill', './src/app.js'],
     mode: 'production',
     optimization: {
       minimizer: [

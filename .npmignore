@@ -18,8 +18,8 @@ report.html
 .gitignore
 .huskyrc
 .npmignore
-.prettierrc
 .nycrc
+.prettierrc
 .stylelintrc
 
 # IDE

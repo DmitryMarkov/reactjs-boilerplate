@@ -8,7 +8,6 @@
   "author": "Piotr Sikora",
   "license": "MIT",
   "scripts": {
-    "precommit": "lint-staged",
     "test": "mocha \"src/**/*.test.js*\" -r babel-core/register -r ignore-styles -r setupTests.js",
     "test:cover": "nyc npm test",
     "test:watch": "npm run test -- --watch --watch-extensions js",

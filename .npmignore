@@ -16,8 +16,10 @@ report.html
 .eslintrc
 .gitattributes
 .gitignore
+.huskyrc
 .npmignore
 .nycrc
+.prettierrc
 .stylelintrc
 
 # IDE
@@ -41,10 +43,10 @@ src
 scripts
 
 # Webpack files
-index.js
+devServer.js
 postcss.config.js
 postinstall.js
-server.js
+prodServer.js
 webpack.config*
 
 # Webpack stats

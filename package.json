@@ -14,7 +14,7 @@
     "coveralls": "npm run test:cover && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint --ext .js src && npm run lint:post",
     "lint:fix": "eslint --fix --ext .js src && npm run lint:post",
-    "lint:post": "echo \"No ESLint errors!!!\"",
+    "lint:post": "echo \u2713 Linting passed!!!",
     "clean": "rimraf dist lib package .nyc_output coverage *.tgz webpack-stats* yarn-error*",
     "analyze": "webpack-bundle-analyzer",
     "pre:build": "npm run lint && cross-env NODE_ENV=production webpack --color --progress --config webpack.config.prod.babel.js --json > webpack-stats.json",

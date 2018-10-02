@@ -18,9 +18,9 @@ report.html
 .gitignore
 .huskyrc
 .npmignore
-.nycrc
 .prettierrc
 .stylelintrc
+jest.config.js
 
 # IDE
 .idea
@@ -56,6 +56,5 @@ webpack.config*
 *.tgz
 
 # Test
-.nyc_output
 coverage
 setupTests.js

@@ -4,5 +4,5 @@ import { mount, shallow } from 'enzyme'
 import HelloWorld from './HelloWorld'
 
 test('<HelloWorld />', () => {
-  const wrapper = shallow(<HelloWorld />);
+  const wrapper = shallow(<HelloWorld />)
 })

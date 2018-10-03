@@ -4,5 +4,5 @@ import { mount, shallow } from 'enzyme'
 import Home from './Home'
 
 test('<Home />', () => {
-  const wrapper = shallow(<Home />);
+  const wrapper = shallow(<Home />)
 })

@@ -11,7 +11,7 @@ module.exports = {
     '\\.(png|svg|jpg|gif)$': 'babel-jest'
   },
   setupTestFrameworkScriptFile: './setupTests.js',
-  testRegex: '__tests__/.+\\.test\\.(js|jsx)$',
+  testRegex: '\\.test\\.js',
   transform: {
     '^.+\\.js?$': 'babel-jest'
   }

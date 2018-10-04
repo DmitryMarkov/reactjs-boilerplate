@@ -10,7 +10,6 @@ report.html
 .travis.yml
 
 # Configs
-.babelrc
 .editorconfig
 .eslintignore
 .eslintrc
@@ -20,6 +19,7 @@ report.html
 .npmignore
 .prettierrc
 .stylelintrc
+babel.config.js
 jest.config.js
 
 # IDE

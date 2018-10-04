@@ -42,13 +42,13 @@
 > To fix simple ESLint errors
 ```npm run lint:fix``` or ```yarn lint:fix```
 
-##### 5. Mocha test
+##### 5. Jest test
 * ```npm test``` or ```yarn test```
 
-##### 6. Mocha watcher
+##### 6. Jest watcher
 * ```npm run test:watch``` or ```yarn test:watch```
 
-##### 7. Test coverage
+##### 7. Jest coverage
 * ```npm run test:cover``` or ```yarn test:cover```
 
 ### Delpoy (production)

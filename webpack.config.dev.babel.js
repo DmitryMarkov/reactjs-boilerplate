@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import BundleAnalyzer from 'webpack-bundle-analyzer'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import resolve from './webpack.config.resolve.babel'
+import resolve from './webpack.config.resolve'
 import appInfo from './package.json'
 
 const { BundleAnalyzerPlugin } = BundleAnalyzer

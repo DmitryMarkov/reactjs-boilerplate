@@ -6,7 +6,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin'
-import resolve from './webpack.config.resolve.babel'
+import resolve from './webpack.config.resolve'
 import appInfo from './package.json'
 
 const { BundleAnalyzerPlugin } = BundleAnalyzer

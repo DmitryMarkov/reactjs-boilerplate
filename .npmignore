@@ -17,6 +17,7 @@ report.html
 .gitignore
 .huskyrc
 .npmignore
+.npmrc
 .prettierrc
 .stylelintrc
 babel.config.js

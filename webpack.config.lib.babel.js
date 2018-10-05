@@ -4,6 +4,7 @@ import BundleAnalyzer from 'webpack-bundle-analyzer'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin'
+import resolve from './webpack.config.resolve'
 import appInfo from './package.json'
 
 const { BundleAnalyzerPlugin } = BundleAnalyzer
@@ -45,9 +46,7 @@ module.exports = env => {
         analyzerMode: ANALYZE ? 'server' : 'disabled'
       })
     ],
-    resolve: {
-      extensions: ['.js']
-    },
+    resolve,
     output: {
       filename: `${appInfo.appName}${MINIFY ? '.min.js' : '.js'}`,
       library: appInfo.appName,

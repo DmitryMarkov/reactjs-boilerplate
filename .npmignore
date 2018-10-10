@@ -30,6 +30,9 @@ jest.config.js
 # macOS files
 .DS_Store
 
+# Node
+node
+
 # Npm & Yarn files
 npm-debug.log
 package-lock.json

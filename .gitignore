@@ -12,7 +12,8 @@ report.html
 # macOS files
 .DS_Store
 
-# Node files
+# Node
+node
 node_modules
 npm-debug.log
 yarn-error.log

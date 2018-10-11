@@ -2,7 +2,7 @@ import path from 'path'
 
 module.exports = {
   alias: {
-    Components: path.resolve(__dirname, 'src/components/')
+    '@': path.resolve(__dirname, 'src')
   },
   extensions: ['.js']
 }

@@ -8,7 +8,8 @@ module.exports = {
   moduleFileExtensions: ['js'],
   moduleNameMapper: {
     '\\.(css|scss)$': 'babel-jest',
-    '\\.(png|svg|jpg|gif)$': 'babel-jest'
+    '\\.(png|svg|jpg|gif)$': 'babel-jest',
+    '@/(.*)$': '<rootDir>/src/$1'
   },
   setupTestFrameworkScriptFile: './setupTests.js',
   testRegex: '\\.test\\.js',

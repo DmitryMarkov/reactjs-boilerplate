@@ -1,7 +1,7 @@
 {
   "name": "reactjs-boilerplate",
   "appName": "HelloWorld",
-  "version": "0.11.2",
+  "version": "0.11.3",
   "description": "ReactJS Boilerplate",
   "main": "./lib/HelloWorld.min.js",
   "repository": "git@github.com:crazyjuice/reactjs-boilerplate.git",

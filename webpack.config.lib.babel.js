@@ -139,7 +139,6 @@ module.exports = env => {
             {
               loader: 'postcss-loader',
               options: {
-                importLoaders: 1,
                 sourceMap: SOURCE_MAP
               }
             },

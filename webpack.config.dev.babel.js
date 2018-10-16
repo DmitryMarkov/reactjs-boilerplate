@@ -81,7 +81,6 @@ module.exports = ({ ANALYZE, MIDDLEWARE }) => ({
           {
             loader: 'postcss-loader',
             options: {
-              importLoaders: 1,
               sourceMap: true
             }
           },

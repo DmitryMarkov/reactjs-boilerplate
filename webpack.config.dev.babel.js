@@ -107,7 +107,10 @@ module.exports = ({ ANALYZE, MIDDLEWARE }) => ({
         test: /\.ico$/,
         use: [
           {
-            loader: 'url-loader'
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
           }
         ]
       },

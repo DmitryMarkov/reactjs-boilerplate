@@ -128,15 +128,12 @@ module.exports = env => {
           ]
         },
         {
-          /*
-           * url-loader images converted to base64
-           * file-loader images stored in images directory
-           */
           test: /\.(png|svg|jpg|gif)$/,
           use: [
             {
-              loader: 'file-loader',
+              loader: 'url-loader',
               options: {
+                limit: 10000,
                 outputPath: 'assets/images',
                 publicPath: '../../assets/images'
               }
@@ -147,7 +144,7 @@ module.exports = env => {
           test: /\.ico$/,
           use: [
             {
-              loader: 'file-loader',
+              loader: 'url-loader',
               options: {
                 name: '[name].[ext]'
               }
@@ -158,13 +155,10 @@ module.exports = env => {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
           use: [
             {
-              /*
-               * For more browser support use file-loader
-               * To bundle fonts inline into .js file use url-loader
-               */
-              loader: 'file-loader',
+              loader: 'url-loader',
               options: {
-                // name: '[name].[ext]',
+                limit: 10000,
+                name: '[hash].[ext]',
                 outputPath: 'assets/fonts',
                 publicPath: '../../assets/fonts'
               }

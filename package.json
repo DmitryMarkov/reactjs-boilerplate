@@ -1,7 +1,7 @@
 {
   "name": "reactjs-boilerplate",
   "appName": "HelloWorld",
-  "version": "0.11.3",
+  "version": "0.11.4",
   "description": "ReactJS Boilerplate",
   "main": "./lib/HelloWorld.min.js",
   "repository": "git@github.com:crazyjuice/reactjs-boilerplate.git",
@@ -49,7 +49,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
-    "autoprefixer": "^9.2.0",
+    "autoprefixer": "^9.2.1",
     "axios": "^0.18.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",

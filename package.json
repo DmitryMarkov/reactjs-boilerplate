@@ -31,7 +31,8 @@
     "start": "npm run lint && npm run server:dev",
     "start:analyze": "npm run lint && npm run server:dev --env.ANALYZE=1",
     "start:dev": "npm run serve",
-    "start:dev:analyze": "npm run serve -- --env.ANALYZE=1"
+    "start:dev:analyze": "npm run serve -- --env.ANALYZE=1",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "lint-staged": {
     "*.js": [
@@ -49,8 +50,8 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
+    "@storybook/react": "^3.4.11",
     "autoprefixer": "^9.2.1",
-    "axios": "^0.18.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -88,8 +89,6 @@
     "postcss-loader": "^3.0.0",
     "prettier": "^1.14.3",
     "prop-types": "^15.6.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",
     "react-router-dom": "^4.3.1",
     "react-test-renderer": "^16.5.2",
@@ -102,12 +101,17 @@
     "stylelint-config-standard": "^18.2.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^1.1.2",
-    "webpack": "^4.20.2",
+    "webpack": "^4.21.0",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-dev-server": "^3.1.9",
     "webpack-hot-middleware": "^2.24.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "whatwg-fetch": "^3.0.0"
+  }
 }

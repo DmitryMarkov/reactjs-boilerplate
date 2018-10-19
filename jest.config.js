@@ -1,5 +1,10 @@
 module.exports = {
-  collectCoverageFrom: ['src/**/*.js*', '!src/app.js', '!src/components/Routes.js'],
+  collectCoverageFrom: [
+    'src/**/*.js*',
+    '!src/app.js',
+    '!src/components/Routes.js',
+    '!src/components/stories/**/*.js*'
+  ],
   globals: {
     APP_NAME: 'sample app',
     APP_VERSION: '0.0.1'

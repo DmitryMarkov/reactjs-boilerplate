@@ -39,8 +39,8 @@
 
 ##### 4. ESLint source code
 * ```npm run lint``` or ```yarn lint```
-> To fix simple ESLint errors
-```npm run lint:fix``` or ```yarn lint:fix```
+###### To fix simple ESLint errors
+* ```npm run lint:fix``` or ```yarn lint:fix```
 
 ##### 5. Jest test
 * ```npm test``` or ```yarn test```
@@ -50,6 +50,14 @@
 
 ##### 7. Jest coverage
 * ```npm run test:cover``` or ```yarn test:cover```
+
+### Storybooks
+
+##### 1. React storybooks
+* ```npm run storybooks``` or ```yarn storybooks```
+
+##### 1. Build storybooks
+* ```npm run storybooks:build``` or ```yarn storybooks:build```
 
 ### Delpoy (production)
 

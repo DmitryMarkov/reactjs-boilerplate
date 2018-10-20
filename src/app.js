@@ -1,11 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { hot } from 'react-hot-loader'
-import Routes from '@/components/Routes'
+import HelloWorld from '@/components/HelloWorld/HelloWorld'
 import '@/assets/css/main.scss'
 import '../public/favicon.ico'
 
-const App = () => <Routes />
+const App = () => <HelloWorld />
 
 render(App(), document.getElementById('app'))
 

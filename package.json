@@ -1,7 +1,7 @@
 {
   "name": "reactjs-boilerplate",
   "appName": "HelloWorld",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "ReactJS Boilerplate",
   "main": "./lib/HelloWorld.min.js",
   "repository": "git@github.com:crazyjuice/reactjs-boilerplate.git",
@@ -52,6 +52,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
     "@storybook/addon-actions": "4.0.0-rc.1",
+    "@storybook/addon-links": "4.0.0-rc.1",
     "@storybook/react": "4.0.0-rc.1",
     "autoprefixer": "^9.2.1",
     "babel-core": "^7.0.0-bridge.0",
@@ -113,7 +114,6 @@
     "moment": "^2.22.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-router-dom": "^4.3.1",
     "whatwg-fetch": "^3.0.0"
   }
 }

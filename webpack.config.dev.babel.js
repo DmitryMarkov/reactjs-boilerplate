@@ -40,9 +40,6 @@ module.exports = ({ ANALYZE, MIDDLEWARE }) => ({
     })
   ],
   resolve,
-  /*
-    * Only for WebpackHotMiddleware
-    */
   output: {
     filename: '[name].js',
     path: __dirname,

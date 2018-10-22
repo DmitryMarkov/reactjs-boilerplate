@@ -59,10 +59,6 @@ module.exports = env => {
     ],
     resolve,
     output: {
-      /*
-       * Export .js files into different location
-       * filename: 'js/[name].[hash].min.js'
-       */
       filename: '[name].[hash].min.js',
       path: path.resolve(__dirname, 'dist')
     },

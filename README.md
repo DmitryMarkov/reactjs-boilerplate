@@ -51,13 +51,13 @@
 ##### 7. Jest coverage
 * ```npm run test:cover``` or ```yarn test:cover```
 
-### Storybooks
+### Storybook
 
-##### 1. React storybooks
-* ```npm run storybooks``` or ```yarn storybooks```
+##### 1. React storybook
+* ```npm run storybook``` or ```yarn storybook```
 
-##### 1. Build storybooks
-* ```npm run storybooks:build``` or ```yarn storybooks:build```
+##### 1. Build storybook
+* ```npm run storybook:build``` or ```yarn storybook:build```
 
 ### Delpoy (production)
 

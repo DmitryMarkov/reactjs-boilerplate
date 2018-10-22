@@ -17,6 +17,7 @@ module.exports = {
     '@/(.*)$': '<rootDir>/src/$1'
   },
   setupTestFrameworkScriptFile: './setupTests.js',
+  testEnvironment: 'jsdom',
   testRegex: '\\.test\\.js',
   transform: {
     '^.+\\.js?$': 'babel-jest'
